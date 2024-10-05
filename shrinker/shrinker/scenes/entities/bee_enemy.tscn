@@ -3,14 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bh574k0rcjckg" path="res://graphics/Enemies/bee/1.png" id="1_aq4ky"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g68sy"]
-radius = 1.0
-height = 2.0
+radius = 3.0
+height = 6.0
 
 [node name="Bee" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 1.81899e-12)
-scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("1_aq4ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

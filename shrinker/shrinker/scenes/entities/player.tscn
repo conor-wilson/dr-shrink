@@ -64,24 +64,24 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qok2"]
-radius = 2.0
-height = 6.0
+radius = 5.0
+height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_p3vp5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4.76837e-07, 1.81899e-12)
-scale = Vector2(0.4375, 0.4375)
+position = Vector2(2.38419e-07, 4.76837e-07)
+scale = Vector2(1.23077, 1.14286)
 sprite_frames = SubResource("SpriteFrames_rolv3")
-animation = &"walk_gun"
+animation = &"idle"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0qok2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
