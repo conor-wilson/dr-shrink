@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal fire_bullet(pos:Vector2, dir:Vector2)
 
+const bullet_dist_from_player := 7
+
 @export var walk_speed         := 300.0
 @export var jump_speed         := 600.0
 @export var gravity_multiplier := 1.0
@@ -51,8 +53,12 @@ func shoot():
 	else:
 		bullet_dir = Vector2.RIGHT
 	
+	# Derrive the position that the bullet should spawn at
+	var bullet_pos := global_position
+	bullet_pos += bullet_dir*bullet_dist_from_player
+	
 	# Fire the bullet and start the cooldown
-	fire_bullet.emit(global_position, bullet_dir)
+	fire_bullet.emit(bullet_pos, bullet_dir)
 	$ShootCooldown.start()
 
 func move(direction:float):
