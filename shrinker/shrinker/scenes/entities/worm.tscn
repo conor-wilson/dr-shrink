@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cchg7ssppn6ng" path="res://audio/shot_01.ogg" id="5_1vunh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dhlhj"]
+resource_local_to_scene = true
 shader = ExtResource("2_m374v")
 shader_parameter/color = Color(0.992157, 0.992157, 0.988235, 1)
 shader_parameter/amount = 0.0
@@ -44,7 +45,7 @@ script = ExtResource("1_7fqqf")
 material = SubResource("ShaderMaterial_dhlhj")
 sprite_frames = SubResource("SpriteFrames_ix8ws")
 autoplay = "default"
-frame_progress = 0.522792
+frame_progress = 0.74009
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
