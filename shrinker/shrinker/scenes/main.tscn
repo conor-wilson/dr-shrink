@@ -10,15 +10,23 @@ position = Vector2(576, 599)
 scale = Vector2(9.07112, 0.857065)
 
 [node name="Platform2" parent="." instance=ExtResource("1_x66ke")]
-position = Vector2(356, 480)
+position = Vector2(217, 503)
+scale = Vector2(0.656121, 0.656121)
 
 [node name="Platform3" parent="." instance=ExtResource("1_x66ke")]
-position = Vector2(481, 356)
+position = Vector2(381, 410)
+scale = Vector2(0.646299, 0.646299)
 
 [node name="Platform4" parent="." instance=ExtResource("1_x66ke")]
-position = Vector2(827, 356)
+position = Vector2(170, 307)
+scale = Vector2(0.676732, 0.676732)
+
+[node name="Platform5" parent="." instance=ExtResource("1_x66ke")]
+position = Vector2(956, 307)
+scale = Vector2(0.676732, 0.676732)
 
 [node name="Player" parent="." instance=ExtResource("2_yg8x5")]
 position = Vector2(110, 513)
 walk_speed = 600.0
-gravity_multiplier = 1.4
+gravity_multiplier = 1.5
+glide_effect = 0.25
