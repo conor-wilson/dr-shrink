@@ -44,3 +44,12 @@ func set_sprite_direction():
 	else:
 		$AnimatedSprite2D.flip_h = true
 		 
+
+
+func _on_bottom_right_area_body_exited(body: Node2D) -> void:
+	direction = Vector2.LEFT
+	set_sprite_direction()
+
+func _on_bottom_left_area_body_exited(body: Node2D) -> void:
+	direction = Vector2.RIGHT
+	set_sprite_direction()
