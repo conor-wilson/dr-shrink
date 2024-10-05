@@ -6,22 +6,9 @@ extends CharacterBody2D
 @export var glide_effect       : float = 0.5
 
 func _physics_process(delta: float) -> void:
-	
-	# Add the gravity.
 	apply_gravity(delta)
-
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = -jump_speed
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("Left", "Right")
-	if direction:
-		velocity.x = direction * walk_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, walk_speed)
-
+	handle_jump()
+	handle_movement()
 	move_and_slide()
 
 func apply_gravity(delta: float):
@@ -36,3 +23,15 @@ func apply_gravity(delta: float):
 		velocity += vel_due_to_gravity
 	else:
 		$Label.text = "NOT GLIDING"
+
+func handle_jump():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = -jump_speed
+
+func handle_movement():
+	var direction := Input.get_axis("Left", "Right")
+	if direction:
+		velocity.x = direction * walk_speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, walk_speed)
+	
