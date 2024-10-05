@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhlgy38ca8fph"]
 
-[ext_resource type="Texture2D" uid="uid://div0ehyylvviq" path="res://graphics/bullet/bullet.png" id="1_dw3g2"]
-[ext_resource type="Script" path="res://scenes/entities/bullet.gd" id="1_yj7kb"]
+[ext_resource type="Script" path="res://scenes/levels/bullet.gd" id="1_td3nc"]
+[ext_resource type="Texture2D" uid="uid://div0ehyylvviq" path="res://graphics/bullet/bullet.png" id="2_mapuf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6re1k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dw3g2")
+"texture": ExtResource("2_mapuf")
 }],
 "loop": true,
 "name": &"default",
@@ -18,7 +18,7 @@ animations = [{
 size = Vector2(12, 6)
 
 [node name="Bullet" type="Area2D"]
-script = ExtResource("1_yj7kb")
+script = ExtResource("1_td3nc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6re1k")

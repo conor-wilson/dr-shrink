@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://2ia1drt3yu51"]
+[gd_scene load_steps=5 format=4 uid="uid://2ia1drt3yu51"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="TileSet" uid="uid://c257uwyyh3eq6" path="res://scenes/levels/new_tile_set.tres" id="1_rogcm"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
 [ext_resource type="PackedScene" uid="uid://dojy0xq2vepd3" path="res://scenes/entities/bee_enemy.tscn" id="3_b4y1d"]
-[ext_resource type="PackedScene" uid="uid://dhlgy38ca8fph" path="res://scenes/entities/bullet.tscn" id="3_kxyrt"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_iyron")
@@ -18,11 +17,12 @@ position = Vector2(497, 141)
 walk_speed = 150.0
 jump_speed = 250.0
 glide_effect = 0.25
-bullet_scene = ExtResource("3_kxyrt")
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Bee" parent="Enemies" instance=ExtResource("3_b4y1d")]
 position = Vector2(523, 121)
+
+[node name="Bullets" type="Node2D" parent="."]
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]

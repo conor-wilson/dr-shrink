@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-signal fire_bullet
+signal fire_bullet(pos:Vector2, dir:Vector2)
 
 @export var walk_speed         := 300.0
 @export var jump_speed         := 600.0
 @export var gravity_multiplier := 1.0
 @export var glide_effect       := 0.5
-@export var bullet_scene       : PackedScene
 
 var has_gun : bool = true
 
@@ -44,7 +43,16 @@ func jump():
 	velocity.y = -jump_speed
 
 func shoot():
-	fire_bullet.emit()
+	
+	# Derrive the direction that the bullet should fire (TODO: Maybe make a direction var)
+	var bullet_dir : Vector2
+	if $AnimatedSprite2D.flip_h: 
+		bullet_dir = Vector2.LEFT
+	else:
+		bullet_dir = Vector2.RIGHT
+	
+	# Fire the bullet and start the cooldown
+	fire_bullet.emit(global_position, bullet_dir)
 	$ShootCooldown.start()
 
 func move(direction:float):
