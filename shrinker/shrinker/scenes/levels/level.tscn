@@ -23,8 +23,10 @@ glide_effect = 0.25
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Bee" parent="Enemies" instance=ExtResource("3_b4y1d")]
+[node name="Bee" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("3_b4y1d")]
 position = Vector2(523, 121)
+marker1 = NodePath("../../BeePathPoints/Marker2D")
+marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
 position = Vector2(631, 140)
@@ -38,5 +40,13 @@ position = Vector2(321, 106)
 
 [node name="Gun" parent="Guns" instance=ExtResource("5_oude2")]
 position = Vector2(575, 138)
+
+[node name="BeePathPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="BeePathPoints"]
+position = Vector2(479, 75)
+
+[node name="Marker2D2" type="Marker2D" parent="BeePathPoints"]
+position = Vector2(410, 121)
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
