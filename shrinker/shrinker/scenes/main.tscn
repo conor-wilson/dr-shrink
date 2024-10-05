@@ -20,4 +20,5 @@ color = Color(0.988235, 0.87451, 0.803922, 1)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pdgux")
+volume_db = -10.0
 autoplay = true
