@@ -20,3 +20,5 @@ position = Vector2(827, 356)
 
 [node name="Player" parent="." instance=ExtResource("2_yg8x5")]
 position = Vector2(110, 513)
+walk_speed = 600.0
+gravity_multiplier = 1.4
