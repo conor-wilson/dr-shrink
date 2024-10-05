@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bine8ows64qgc" path="res://scenes/levels/platform.tscn" id="1_x66ke"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_yg8x5"]
-[ext_resource type="PackedScene" uid="uid://cu4lgm6j38g3t" path="res://scenes/rat.tscn" id="3_h4ul5"]
+[ext_resource type="PackedScene" uid="uid://cu4lgm6j38g3t" path="res://scenes/entities/rat.tscn" id="3_h4ul5"]
 
 [node name="Main" type="Node2D"]
 
