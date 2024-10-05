@@ -350,7 +350,7 @@ tile_set = SubResource("TileSet_rtuey")
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
 position = Vector2(170, 352)
-jump_speed = 900.0
+jump_speed = 950.0
 gravity_multiplier = 3.5
 glide_effect = 0.25
 
@@ -362,7 +362,7 @@ marker1 = NodePath("../../BeePathPoints/Marker2D")
 marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
-position = Vector2(554, 508)
+position = Vector2(561, 505)
 
 [node name="Worm2" parent="Enemies" instance=ExtResource("5_uebae")]
 position = Vector2(665, 620)
@@ -372,7 +372,8 @@ position = Vector2(665, 620)
 [node name="Guns" type="Node2D" parent="."]
 
 [node name="Gun" parent="Guns" instance=ExtResource("5_oude2")]
-position = Vector2(216, 536)
+position = Vector2(1236, 171)
+float_amplitude = 20.0
 
 [node name="BeePathPoints" type="Node2D" parent="."]
 

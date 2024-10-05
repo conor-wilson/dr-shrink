@@ -27,14 +27,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4e43"]
-radius = 3.0
-height = 10.0
+radius = 7.0
+height = 18.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3o70v"]
-size = Vector2(12, 2)
+size = Vector2(22, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duqlh"]
-size = Vector2(1, 3)
+size = Vector2(1.5, 4.5)
 
 [node name="Worm" type="Area2D"]
 collision_layer = 4
@@ -43,6 +43,7 @@ script = ExtResource("1_7fqqf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_dhlhj")
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ix8ws")
 autoplay = "default"
 frame_progress = 0.74009
@@ -59,13 +60,13 @@ shape = SubResource("RectangleShape2D_3o70v")
 [node name="BottomRightArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRightArea"]
-position = Vector2(6, 4)
+position = Vector2(12, 8)
 shape = SubResource("RectangleShape2D_duqlh")
 
 [node name="BottomLeftArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftArea"]
-position = Vector2(-6, 4)
+position = Vector2(-12, 8)
 shape = SubResource("RectangleShape2D_duqlh")
 
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="."]

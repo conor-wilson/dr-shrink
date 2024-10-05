@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 signal fire_bullet(pos:Vector2, dir:Vector2)
 
-const bullet_dist_from_player := 14
+const bullet_dist_from_player := 56
 
 @export var walk_speed         := 300.0
 @export var jump_speed         := 600.0
