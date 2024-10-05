@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qqpy727wo2k3"]
+[gd_scene load_steps=14 format=3 uid="uid://qqpy727wo2k3"]
 
 [ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_p3vp5"]
 [ext_resource type="Shader" path="res://scenes/entities/flicker.gdshader" id="2_fk600"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://baknl57csjt2o" path="res://graphics/player/basic/walk.png" id="3_a7p5x"]
 [ext_resource type="Texture2D" uid="uid://cucddsuj0rd6a" path="res://graphics/player/gun/walk.png" id="5_chux7"]
 [ext_resource type="Texture2D" uid="uid://cudog6n220vma" path="res://graphics/bullet/fire.png" id="6_3i83o"]
+[ext_resource type="AudioStream" uid="uid://ddqqer7yeq3ay" path="res://audio/synth_laser_03.ogg" id="8_w42vw"]
+[ext_resource type="AudioStream" uid="uid://cncrh8kpndbgp" path="res://audio/jump.mp3" id="9_k7h02"]
+[ext_resource type="AudioStream" uid="uid://cchg7ssppn6ng" path="res://audio/shot_01.ogg" id="10_r6pwj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4p1pi"]
 shader = ExtResource("2_fk600")
@@ -117,3 +120,14 @@ flip_h = true
 visible = false
 position = Vector2(12, 2)
 texture = ExtResource("6_3i83o")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_w42vw")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("9_k7h02")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("10_r6pwj")

@@ -45,6 +45,7 @@ func handle_input():
 
 func jump():
 	velocity.y = -jump_speed
+	$Sounds/JumpSound.play()
 
 func shoot():
 	
@@ -64,6 +65,7 @@ func shoot():
 	
 	# Fire the bullet and start the cooldown
 	fire_bullet.emit(bullet_pos, bullet_dir)
+	$Sounds/FireSound.play()
 	fire_animation.show()
 	await get_tree().create_timer(0.1).timeout
 	fire_animation.hide()
@@ -114,6 +116,7 @@ func damage(amount:int):
 	
 	# Damage the Player's health and check for death
 	health -= amount
+	$Sounds/DamageSound.play()
 	check_death()
 	
 	# Flicker the Player using the shader

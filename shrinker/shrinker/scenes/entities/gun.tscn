@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcl1vx7un8iwa"]
+[gd_scene load_steps=5 format=3 uid="uid://dcl1vx7un8iwa"]
 
 [ext_resource type="Script" path="res://scenes/entities/gun.gd" id="1_3sqi5"]
 [ext_resource type="Texture2D" uid="uid://cnq42nqqkw3dy" path="res://graphics/player/gun/gun.png" id="1_5eefc"]
+[ext_resource type="AudioStream" uid="uid://c1p4badr56mpo" path="res://audio/power_up_01.ogg" id="3_exp5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twyhu"]
 size = Vector2(10, 4)
@@ -16,5 +17,8 @@ texture = ExtResource("1_5eefc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_twyhu")
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_exp5w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

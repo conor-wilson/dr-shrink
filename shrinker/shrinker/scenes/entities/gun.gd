@@ -8,6 +8,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player: 
+	if body is Player:
 		body.has_gun = true
+		hide()
+		$CollectSound.play()
+		await $CollectSound.finished
 		queue_free()

@@ -18,14 +18,18 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	area.queue_free()
 	
-	# Damage the worm and check for death
+	# Damage the worm
 	health -= 1
-	check_death()
+	$DamageSound.play()
 	
 	# Flicker the worm using the shader
 	var tween = create_tween()
 	tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 1.0, 0.0)
 	tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.2)
+	
+	# Check for death
+	await $DamageSound.finished
+	check_death()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
