@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu4lgm6j38g3t"]
+
+[ext_resource type="Script" path="res://scenes/rat.gd" id="1_026t1"]
+[ext_resource type="Texture2D" uid="uid://jav6v607tnug" path="res://icon.svg" id="1_spujb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60jg2"]
+size = Vector2(118, 120.275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofhsy"]
+size = Vector2(78, 20)
+
+[node name="Rat" type="CharacterBody2D"]
+script = ExtResource("1_026t1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.4759, 0.4759)
+texture = ExtResource("1_spujb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.461599)
+scale = Vector2(0.473275, 0.473275)
+shape = SubResource("RectangleShape2D_60jg2")
+
+[node name="BoarderArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoarderArea"]
+shape = SubResource("RectangleShape2D_ofhsy")
+
+[connection signal="body_entered" from="BoarderArea" to="." method="_on_boarder_area_body_entered"]
