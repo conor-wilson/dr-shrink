@@ -1,20 +1,13 @@
 extends CharacterBody2D
 
-signal glide
-signal shoot
-
 @export var walk_speed         := 300.0
 @export var jump_speed         := 600.0
 @export var gravity_multiplier := 1.0
 @export var glide_effect       := 0.5
 
-var direction_x := 0.0
-
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-	handle_jump()
-	handle_movement()
-	handle_shoot()
+	handle_input()
 	move_and_slide()
 
 func apply_gravity(delta: float):
@@ -22,32 +15,27 @@ func apply_gravity(delta: float):
 		var vel_due_to_gravity:Vector2 = get_gravity() * gravity_multiplier * delta
 		if velocity.y > 0 && Input.is_action_pressed("Jump"):
 			vel_due_to_gravity *= glide_effect
-			glide.emit()
+			print("GLIDING!")
 		
 		velocity += vel_due_to_gravity
 
-
-func handle_jump():
+func handle_input(): 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = -jump_speed
-
-# TODO: Create a handle_input() function
-
-func handle_movement():
+		jump()
+	if Input.is_action_just_pressed("Shoot") and $ShootCooldown.is_stopped():
+		shoot()
 	var direction := Input.get_axis("Left", "Right")
+	move(direction)
+
+func jump():
+	velocity.y = -jump_speed
+
+func shoot():
+	print("SHOOT!")
+	$ShootCooldown.start()
+
+func move(direction:float):
 	if direction:
 		velocity.x = direction * walk_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed)
-
-func handle_shoot():
-	if Input.is_action_pressed("Shoot"):
-		shoot.emit()
-
-
-func _on_glide() -> void:
-	$Label.text = "GLIDE"
-
-
-func _on_shoot() -> void:
-	$Label.text = "BANG!"
