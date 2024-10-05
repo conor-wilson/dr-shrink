@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://2ia1drt3yu51"]
+[gd_scene load_steps=7 format=4 uid="uid://2ia1drt3yu51"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="TileSet" uid="uid://c257uwyyh3eq6" path="res://scenes/levels/new_tile_set.tres" id="1_rogcm"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
 [ext_resource type="PackedScene" uid="uid://dojy0xq2vepd3" path="res://scenes/entities/bee.tscn" id="3_b4y1d"]
 [ext_resource type="PackedScene" uid="uid://dcl1vx7un8iwa" path="res://scenes/entities/gun.tscn" id="5_oude2"]
+[ext_resource type="PackedScene" uid="uid://dx2ny8uhi6m5v" path="res://scenes/entities/worm.tscn" id="5_uebae"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_iyron")
@@ -23,6 +24,9 @@ glide_effect = 0.25
 
 [node name="Bee" parent="Enemies" instance=ExtResource("3_b4y1d")]
 position = Vector2(523, 121)
+
+[node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
+position = Vector2(599, 140)
 
 [node name="Bullets" type="Node2D" parent="."]
 
