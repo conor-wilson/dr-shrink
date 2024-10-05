@@ -43,7 +43,7 @@ script = ExtResource("1_7fqqf")
 material = SubResource("ShaderMaterial_dhlhj")
 sprite_frames = SubResource("SpriteFrames_ix8ws")
 autoplay = "default"
-frame_progress = 0.113865
+frame_progress = 0.795491
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

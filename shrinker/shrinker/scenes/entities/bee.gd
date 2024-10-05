@@ -3,14 +3,18 @@ extends Area2D
 # TODO: This de-duplicate the enemy code
 
 @export var speed: float = 25
+@export var player_detect_distance : float = 64
 @export var marker1: Marker2D
 @export var marker2: Marker2D
 
 var health := 3
 @onready var target = marker2
+@onready var player:Player = get_tree().get_first_node_in_group('Player') # <-- COOL!
+var following:bool 
 
 func _process(delta: float) -> void:
 	set_target()
+	detect_player()
 	move(delta)
 
 func check_death(): 
@@ -38,7 +42,15 @@ func _on_body_entered(body: Node2D) -> void:
 		body.damage(1)
 
 func move(delta: float):
-	var direction : Vector2 = (target.position - position).normalized()
+	
+	# Parse the direction the bee should be flying
+	var direction : Vector2
+	if following: 
+		direction = (player.position - position).normalized()
+	else:
+		direction = (target.position - position).normalized()
+	
+	# Move the bee
 	position += direction * speed * delta
 	set_sprite_direction(direction)
 
@@ -53,4 +65,7 @@ func set_sprite_direction(direction:Vector2):
 		$AnimatedSprite2D.flip_h = false
 	else:
 		$AnimatedSprite2D.flip_h = true
-		 
+
+# detect_player detects if the bee is close to the player.
+func detect_player():
+	following = position.distance_to(player.position) < player_detect_distance
