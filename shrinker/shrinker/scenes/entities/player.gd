@@ -10,8 +10,10 @@ const bullet_dist_from_player := 14
 @export var glide_effect       := 0.5
 
 var has_gun : bool = false
+var health  : int  = 5
 
 func _process(delta: float) -> void:
+	check_death()
 	apply_gravity(delta)
 	handle_input()
 	set_animation()
@@ -99,3 +101,7 @@ func set_animation():
 func set_direction(direction:float):
 	if direction != 0:
 		$AnimatedSprite2D.flip_h = (direction <= 0)
+
+func check_death():
+	if health <= 0:
+		get_tree().quit()

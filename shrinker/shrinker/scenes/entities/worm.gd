@@ -15,3 +15,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "material:shader_parameter/amount", 1.0, 0.0)
 	tween.tween_property($Sprite2D, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.2)
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.health -= 1
