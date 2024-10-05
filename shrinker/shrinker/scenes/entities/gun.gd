@@ -5,3 +5,7 @@ extends Area2D
 
 func _process(delta: float) -> void:
 	position.y += sin(Time.get_ticks_msec() * float_rate) * float_amplitude * delta
+
+
+func _on_body_entered(body: Node2D) -> void:
+	body.has_gun = true

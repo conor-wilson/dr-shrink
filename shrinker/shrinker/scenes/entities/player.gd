@@ -9,7 +9,7 @@ const bullet_dist_from_player := 14
 @export var gravity_multiplier := 1.0
 @export var glide_effect       := 0.5
 
-var has_gun : bool = true
+var has_gun : bool = false
 
 func _process(delta: float) -> void:
 	apply_gravity(delta)
@@ -29,11 +29,11 @@ func apply_gravity(delta: float):
 func handle_input():
 	
 	# Handle jump input
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		jump()
 	
 	# Handle shoot input
-	if Input.is_action_just_pressed("Shoot") and $ShootCooldown.is_stopped():
+	if Input.is_action_just_pressed("Shoot") && $ShootCooldown.is_stopped() && has_gun :
 		shoot()
 	
 	# Handle the directional input
