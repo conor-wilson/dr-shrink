@@ -35,7 +35,7 @@ func handle_input():
 		jump()
 	
 	# Handle shoot input
-	if Input.is_action_just_pressed("Shoot") && $ShootCooldown.is_stopped() && has_gun :
+	if Input.is_action_just_pressed("Shoot") && $Timers/ShootCooldown.is_stopped() && has_gun :
 		shoot()
 	
 	# Handle the directional input
@@ -67,7 +67,7 @@ func shoot():
 	fire_animation.show()
 	await get_tree().create_timer(0.1).timeout
 	fire_animation.hide()
-	$ShootCooldown.start()
+	$Timers/ShootCooldown.start()
 
 func move(direction:float):
 	if direction:
@@ -105,3 +105,21 @@ func set_direction(direction:float):
 func check_death():
 	if health <= 0:
 		get_tree().quit()
+
+func damage(amount:int):
+	
+	# Check for invincibility
+	if !$Timers/InvincibilityCooldown.is_stopped():
+		return
+	
+	# Damage the Player's health and check for death
+	health -= 1
+	check_death()
+	
+	# Flicker the Player using the shader
+	var tween = create_tween()
+	tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 1.0, 0.0)
+	tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.2)
+	
+	# Make the Player temporarily invulnerable
+	$Timers/InvincibilityCooldown.start()
