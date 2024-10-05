@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvedm0us3v54"]
+[gd_scene load_steps=3 format=3 uid="uid://dvedm0us3v54"]
 
+[ext_resource type="PackedScene" uid="uid://c3jm7al5nk63m" path="res://scenes/ui/ui.tscn" id="2_03qlr"]
 [ext_resource type="PackedScene" uid="uid://2ia1drt3yu51" path="res://scenes/levels/level.tscn" id="2_aqpo2"]
 
 [node name="Main" type="Node"]
@@ -13,3 +14,5 @@ offset_bottom = 648.0
 color = Color(0.988235, 0.87451, 0.803922, 1)
 
 [node name="Level" parent="." instance=ExtResource("2_aqpo2")]
+
+[node name="UI" parent="." instance=ExtResource("2_03qlr")]

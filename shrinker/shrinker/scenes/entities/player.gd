@@ -10,7 +10,7 @@ const bullet_dist_from_player := 14
 @export var glide_effect       := 0.5
 
 var has_gun : bool = false
-var health  : int  = 5
+var health  : int  = 100
 
 func _process(delta: float) -> void:
 	check_death()
@@ -113,7 +113,7 @@ func damage(amount:int):
 		return
 	
 	# Damage the Player's health and check for death
-	health -= 1
+	health -= amount
 	check_death()
 	
 	# Flicker the Player using the shader
