@@ -14,7 +14,7 @@ tile_map_data = PackedByteArray("AAAFAAUAAAAJAAAAAAAGAAYAAAAJAAAAAAAHAAYAAAAJAAA
 tile_set = ExtResource("1_rogcm")
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
-position = Vector2(497, 136)
+position = Vector2(507, 137)
 walk_speed = 150.0
 jump_speed = 250.0
 glide_effect = 0.25
@@ -29,6 +29,6 @@ position = Vector2(523, 121)
 [node name="Guns" type="Node2D" parent="."]
 
 [node name="Gun" parent="Guns" instance=ExtResource("5_oude2")]
-position = Vector2(575, 140)
+position = Vector2(575, 138)
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
