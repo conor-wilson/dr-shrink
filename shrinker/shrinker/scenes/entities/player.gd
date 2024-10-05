@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 func apply_gravity(delta: float):
 	if not is_on_floor():
 		var vel_due_to_gravity:Vector2 = get_gravity() * gravity_multiplier * delta
-		if velocity.y > 0 && Input.is_action_pressed("Glide"):
+		if velocity.y > 0 && Input.is_action_pressed("Jump"):
 			vel_due_to_gravity *= glide_effect
 			$Label.text = "GLIDING"
 		else:

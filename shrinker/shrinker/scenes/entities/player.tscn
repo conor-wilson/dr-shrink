@@ -19,7 +19,6 @@ position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_1qw6c")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -59.0
 offset_top = -51.0
 offset_right = 46.0
