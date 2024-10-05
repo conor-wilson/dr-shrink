@@ -18,6 +18,8 @@ animations = [{
 size = Vector2(12, 6)
 
 [node name="Bullet" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
 script = ExtResource("1_td3nc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

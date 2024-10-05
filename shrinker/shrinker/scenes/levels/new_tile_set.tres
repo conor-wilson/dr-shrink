@@ -55,4 +55,5 @@ texture = ExtResource("1_vujv8")
 
 [resource]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_1afa0")

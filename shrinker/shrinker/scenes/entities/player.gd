@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 signal fire_bullet(pos:Vector2, dir:Vector2)
 

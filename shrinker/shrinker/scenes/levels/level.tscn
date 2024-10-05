@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="TileSet" uid="uid://c257uwyyh3eq6" path="res://scenes/levels/new_tile_set.tres" id="1_rogcm"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
-[ext_resource type="PackedScene" uid="uid://dojy0xq2vepd3" path="res://scenes/entities/bee_enemy.tscn" id="3_b4y1d"]
+[ext_resource type="PackedScene" uid="uid://dojy0xq2vepd3" path="res://scenes/entities/bee.tscn" id="3_b4y1d"]
 [ext_resource type="PackedScene" uid="uid://dcl1vx7un8iwa" path="res://scenes/entities/gun.tscn" id="5_oude2"]
 
 [node name="Level" type="Node2D"]
