@@ -48,10 +48,13 @@ func shoot():
 	
 	# Derrive the direction that the bullet should fire (TODO: Maybe make a direction var)
 	var bullet_dir : Vector2
+	var fire_animation : Sprite2D
 	if $AnimatedSprite2D.flip_h: 
 		bullet_dir = Vector2.LEFT
+		fire_animation = $Fire/FireLeft
 	else:
 		bullet_dir = Vector2.RIGHT
+		fire_animation = $Fire/FireRight
 	
 	# Derrive the position that the bullet should spawn at
 	var bullet_pos := global_position
@@ -59,6 +62,9 @@ func shoot():
 	
 	# Fire the bullet and start the cooldown
 	fire_bullet.emit(bullet_pos, bullet_dir)
+	fire_animation.show()
+	await get_tree().create_timer(0.1).timeout
+	fire_animation.hide()
 	$ShootCooldown.start()
 
 func move(direction:float):
