@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm5nb2a6vxhpe"]
+[gd_scene load_steps=7 format=3 uid="uid://bm5nb2a6vxhpe"]
 
+[ext_resource type="Script" path="res://scenes/entities/potion_machine.gd" id="1_524jn"]
 [ext_resource type="Texture2D" uid="uid://bnxs6v3lltari" path="res://graphics/custom/PotionMachinePurple-Sheet.png" id="1_fesuh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5aj7t"]
@@ -45,6 +46,7 @@ _data = {
 }
 
 [node name="PotionMachine" type="Area2D"]
+script = ExtResource("1_524jn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
