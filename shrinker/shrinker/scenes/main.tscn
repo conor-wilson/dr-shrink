@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvedm0us3v54"]
+[gd_scene load_steps=6 format=3 uid="uid://dvedm0us3v54"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_dfkcu"]
 [ext_resource type="PackedScene" uid="uid://c3jm7al5nk63m" path="res://scenes/ui/ui.tscn" id="2_03qlr"]
 [ext_resource type="PackedScene" uid="uid://2ia1drt3yu51" path="res://scenes/levels/level.tscn" id="2_aqpo2"]
 [ext_resource type="AudioStream" uid="uid://cwu1bbrevcvqg" path="res://audio/bg_music.ogg" id="3_pdgux"]
+[ext_resource type="PackedScene" uid="uid://bo3bv3v7gi5j4" path="res://scenes/ui/victory_screen.tscn" id="5_r7y8h"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_dfkcu")
 
 [node name="BG" type="CanvasLayer" parent="."]
 layer = -1
@@ -22,3 +25,8 @@ color = Color(0.988235, 0.87451, 0.803922, 1)
 stream = ExtResource("3_pdgux")
 volume_db = -10.0
 autoplay = true
+
+[node name="VictoryScreen" parent="." instance=ExtResource("5_r7y8h")]
+visible = false
+
+[connection signal="victory" from="Level" to="." method="_on_level_victory"]

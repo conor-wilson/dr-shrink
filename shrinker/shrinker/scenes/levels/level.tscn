@@ -43,7 +43,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAYAAAAAAAEAAAAAAAYAAAAAAAIAAAAAAAY
 tile_set = ExtResource("2_u3umr")
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
-position = Vector2(170, 352)
+position = Vector2(219, 350)
 jump_speed = 950.0
 gravity_multiplier = 3.5
 glide_effect = 0.25
@@ -57,9 +57,6 @@ marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
 position = Vector2(561, 505)
-
-[node name="Worm2" parent="Enemies" instance=ExtResource("5_uebae")]
-position = Vector2(665, 620)
 
 [node name="Bullets" type="Node2D" parent="."]
 
@@ -84,3 +81,4 @@ position = Vector2(768, 227)
 tile_set = SubResource("TileSet_jine5")
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
+[connection signal="shrink_me" from="Player" to="." method="_on_player_shrink_me"]
