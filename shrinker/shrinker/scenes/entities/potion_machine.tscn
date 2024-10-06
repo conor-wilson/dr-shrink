@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5aj7t"]
 radius = 32.0
-height = 114.0
+height = 68.0
 
 [sub_resource type="Animation" id="Animation_yu5xh"]
 resource_name = "purple_bubbles"
@@ -46,6 +46,8 @@ _data = {
 }
 
 [node name="PotionMachine" type="Area2D"]
+collision_layer = 32
+collision_mask = 18
 script = ExtResource("1_524jn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -62,3 +64,5 @@ libraries = {
 "": SubResource("AnimationLibrary_41ypu")
 }
 autoplay = "purple_bubbles"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
