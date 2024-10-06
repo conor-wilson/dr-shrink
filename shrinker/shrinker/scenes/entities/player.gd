@@ -12,8 +12,10 @@ const bullet_dist_from_player := 56
 var has_gun : bool = false
 var health  : int  = 100
 
+# TODO: Review how this is handled (probably after the game jam)
+var can_shrink:bool = false
+
 func _process(delta: float) -> void:
-	check_death()
 	apply_gravity(delta)
 	handle_input()
 	set_animation()
@@ -28,6 +30,9 @@ func apply_gravity(delta: float):
 		velocity += vel_due_to_gravity
 
 func handle_input():
+	
+	if Input.is_action_just_pressed("Shrink") && can_shrink:
+		shrink()
 	
 	# Handle jump input
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
@@ -125,3 +130,6 @@ func damage(amount:int):
 	
 	# Make the Player temporarily invulnerable
 	$Timers/InvincibilityCooldown.start()
+
+func shrink():
+	print("SHRINKING!")
