@@ -5,20 +5,52 @@ signal shrink_me
 
 const bullet_dist_from_player := 56
 
-@export var walk_speed         := 300.0
-@export var jump_speed         := 600.0
-@export var gravity_multiplier := 1.0
-@export var glide_effect       := 0.5
+@export var current_size : int = 4
+
+var walk_speed         
+var jump_speed         
+var gravity_multiplier
+var glide_effect    
+
+# TODO: Review how these are set after the jam. Very jankey at the moment.
+var walk_speeds: Array[float] = [
+	150.0,  # Size 0 (not currently scoped)
+	200.0,  # Size 1
+	300.0,  # Size 2
+	600.0,  # Size 3
+	1000.0, # Size 4
+]
+var jump_speeds: Array[float] = [
+	275,  # Size 0 (not currently scoped)
+	550,  # Size 1
+	950,  # Size 2
+	1750, # Size 3
+	3500, # Size 4
+]
+var grav_multipliers: Array[float] = [
+	1, # Size 0 (not currently scoped)
+	2.1, # Size 1
+	3.5, # Size 2
+	6, # Size 3
+	10, # Size 4
+]
+var glide_effects: Array[float] = [
+	0.25, # Size 0 (not currently scoped)
+	0.25, # Size 1
+	0.25, # Size 2
+	0.25, # Size 3
+	0.25, # Size 4
+]
 
 var has_gun : bool = false
 var health  : int  = 100
-var current_size : int = 4
 
 # TODO: Review how this is handled (probably after the game jam)
 var can_shrink:bool = false
 
 func _ready():
 	set_sprite_size()
+	set_variable_params()
 
 func _process(delta: float) -> void:
 	apply_gravity(delta)
@@ -139,6 +171,7 @@ func damage(amount:int):
 func shrink():
 	current_size -= 1
 	set_sprite_size()
+	set_variable_params()
 	#shrink_me.emit()
 
 func set_sprite_size():
@@ -146,3 +179,8 @@ func set_sprite_size():
 	$CollisionShape2D.scale = Vector2(1,1)* pow(2, current_size)
 	$Camera2D.zoom = Vector2(1,1)* (4* pow(2, -current_size))
 	
+func set_variable_params():
+	walk_speed = walk_speeds[current_size]
+	jump_speed = jump_speeds[current_size]
+	gravity_multiplier = grav_multipliers[current_size]
+	glide_effect = glide_effects[current_size]

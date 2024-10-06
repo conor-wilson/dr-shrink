@@ -29,4 +29,60 @@ autoplay = true
 [node name="VictoryScreen" parent="." instance=ExtResource("5_r7y8h")]
 visible = false
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1520.0
+offset_right = 910.0
+offset_bottom = 1528.0
+color = Color(1, 0.621042, 0.563658, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1528.0
+offset_right = 910.0
+offset_bottom = 1536.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1504.0
+offset_right = 910.0
+offset_bottom = 1512.0
+color = Color(1, 0.621042, 0.563658, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1512.0
+offset_right = 910.0
+offset_bottom = 1520.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1488.0
+offset_right = 910.0
+offset_bottom = 1496.0
+color = Color(1, 0.621042, 0.563658, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1496.0
+offset_right = 910.0
+offset_bottom = 1504.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1472.0
+offset_right = 910.0
+offset_bottom = 1480.0
+color = Color(1, 0.621042, 0.563658, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_left = 902.0
+offset_top = 1480.0
+offset_right = 910.0
+offset_bottom = 1488.0
+color = Color(1, 0, 0, 1)
+
 [connection signal="victory" from="Level" to="." method="_on_level_victory"]
