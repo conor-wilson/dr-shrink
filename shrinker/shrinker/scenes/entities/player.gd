@@ -144,4 +144,5 @@ func shrink():
 func set_sprite_size():
 	$AnimatedSprite2D.scale = Vector2(1,1)* pow(2, current_size)
 	$CollisionShape2D.scale = Vector2(1,1)* pow(2, current_size)
+	$Camera2D.zoom = Vector2(1,1)* (4* pow(2, -current_size))
 	

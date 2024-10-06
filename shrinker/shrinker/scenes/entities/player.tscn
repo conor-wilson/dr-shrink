@@ -43,10 +43,10 @@ shader_parameter/amount = 0.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_5ds5o")
+"texture": ExtResource("4_3rtbb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3rtbb")
+"texture": ExtResource("3_5ds5o")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_brkvq")
@@ -161,9 +161,8 @@ script = ExtResource("1_p3vp5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_4p1pi")
-position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_rolv3")
-animation = &"idle"
+animation = &"walk_gun"
 autoplay = "walk"
 speed_scale = 2.0
 
