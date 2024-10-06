@@ -9,4 +9,6 @@ func _process(delta: float) -> void:
 
 func set_direction(direction:Vector2): 
 	self.direction = direction
-	rotate(direction.angle())
+	print(direction)
+	if direction.x <= 0:
+		$Sprite2D.flip_h = true
