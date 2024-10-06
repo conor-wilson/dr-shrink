@@ -24,7 +24,6 @@ func apply_gravity(delta: float):
 		var vel_due_to_gravity:Vector2 = get_gravity() * gravity_multiplier * delta
 		if velocity.y > 0 && Input.is_action_pressed("Jump"):
 			vel_due_to_gravity *= glide_effect
-			print("GLIDING!")
 		
 		velocity += vel_due_to_gravity
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://2ia1drt3yu51"]
+[gd_scene load_steps=11 format=4 uid="uid://2ia1drt3yu51"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dcl1vx7un8iwa" path="res://scenes/entities/gun.tscn" id="5_oude2"]
 [ext_resource type="PackedScene" uid="uid://dx2ny8uhi6m5v" path="res://scenes/entities/worm.tscn" id="5_uebae"]
 [ext_resource type="Texture2D" uid="uid://5ndf1hk58gps" path="res://graphics/level/tilesets/decoration_tilemap.png" id="7_dx145"]
+[ext_resource type="PackedScene" uid="uid://bm5nb2a6vxhpe" path="res://scenes/entities/potion_machine.tscn" id="7_i7cbh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olvs5"]
 texture = ExtResource("7_dx145")
@@ -62,11 +63,14 @@ position = Vector2(665, 620)
 
 [node name="Bullets" type="Node2D" parent="."]
 
-[node name="Guns" type="Node2D" parent="."]
+[node name="Items" type="Node2D" parent="."]
 
-[node name="Gun" parent="Guns" instance=ExtResource("5_oude2")]
+[node name="Gun" parent="Items" instance=ExtResource("5_oude2")]
 position = Vector2(1236, 171)
 float_amplitude = 20.0
+
+[node name="PotionMachine" parent="Items" instance=ExtResource("7_i7cbh")]
+position = Vector2(129, 352)
 
 [node name="BeePathPoints" type="Node2D" parent="."]
 
