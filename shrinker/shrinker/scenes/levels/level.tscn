@@ -368,9 +368,10 @@ tile_set = SubResource("TileSet_3foop")
 
 [node name="PotionMachine" parent="." instance=ExtResource("7_i7cbh")]
 position = Vector2(466, 1471)
+has_red = true
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
-position = Vector2(1124, 1480)
+position = Vector2(1095, 898)
 jump_speed = 950.0
 gravity_multiplier = 3.5
 glide_effect = 0.25
@@ -383,14 +384,14 @@ marker1 = NodePath("../../BeePathPoints/Marker2D")
 marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
-position = Vector2(815, 505)
+position = Vector2(1888, 1016)
 
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Gun" parent="Items" instance=ExtResource("5_oude2")]
-position = Vector2(2484, 345)
+position = Vector2(1274, 1494)
 float_amplitude = 20.0
 
 [node name="BeePathPoints" type="Node2D" parent="."]

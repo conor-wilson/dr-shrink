@@ -12,9 +12,13 @@ const bullet_dist_from_player := 56
 
 var has_gun : bool = false
 var health  : int  = 100
+var current_size : int = 4
 
 # TODO: Review how this is handled (probably after the game jam)
 var can_shrink:bool = false
+
+func _ready():
+	set_sprite_size()
 
 func _process(delta: float) -> void:
 	apply_gravity(delta)
@@ -133,4 +137,11 @@ func damage(amount:int):
 	$Timers/InvincibilityCooldown.start()
 
 func shrink():
-	shrink_me.emit()
+	current_size -= 1
+	set_sprite_size()
+	#shrink_me.emit()
+
+func set_sprite_size():
+	$AnimatedSprite2D.scale = Vector2(1,1)* pow(2, current_size)
+	$CollisionShape2D.scale = Vector2(1,1)* pow(2, current_size)
+	
