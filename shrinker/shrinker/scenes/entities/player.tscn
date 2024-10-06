@@ -1,15 +1,37 @@
-[gd_scene load_steps=14 format=3 uid="uid://qqpy727wo2k3"]
+[gd_scene load_steps=36 format=3 uid="uid://qqpy727wo2k3"]
 
 [ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_p3vp5"]
 [ext_resource type="Shader" path="res://scenes/entities/flicker.gdshader" id="2_fk600"]
-[ext_resource type="Texture2D" uid="uid://dbb3jmrdcay6r" path="res://graphics/player/basic/idle.png" id="2_ieg7t"]
-[ext_resource type="Texture2D" uid="uid://b0efgrwb2ionq" path="res://graphics/player/gun/idle.png" id="2_j17tb"]
-[ext_resource type="Texture2D" uid="uid://baknl57csjt2o" path="res://graphics/player/basic/walk.png" id="3_a7p5x"]
-[ext_resource type="Texture2D" uid="uid://cucddsuj0rd6a" path="res://graphics/player/gun/walk.png" id="5_chux7"]
+[ext_resource type="Texture2D" uid="uid://bt00hs3w1tlky" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle1.png" id="3_5ds5o"]
+[ext_resource type="Texture2D" uid="uid://4c4r0passx3b" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle2.png" id="4_3rtbb"]
+[ext_resource type="Texture2D" uid="uid://b1w64alqlndyx" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle3.png" id="5_brkvq"]
 [ext_resource type="Texture2D" uid="uid://cudog6n220vma" path="res://graphics/bullet/fire.png" id="6_3i83o"]
+[ext_resource type="Texture2D" uid="uid://cwmavrmrij5vs" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle4.png" id="6_g3wqk"]
+[ext_resource type="Texture2D" uid="uid://b88llrtponnha" path="res://graphics/elthens_pixel_art_scientists/IdleRedPotion/ScientistIdleRedPotion1.png" id="7_gxtqh"]
+[ext_resource type="Texture2D" uid="uid://cqbq8eroubotf" path="res://graphics/elthens_pixel_art_scientists/Jump/ScientistJump.png" id="8_b8dgw"]
+[ext_resource type="Texture2D" uid="uid://bg8ylew2bf0cd" path="res://graphics/elthens_pixel_art_scientists/IdleRedPotion/ScientistIdleRedPotion2.png" id="8_maclv"]
 [ext_resource type="AudioStream" uid="uid://ddqqer7yeq3ay" path="res://audio/synth_laser_03.ogg" id="8_w42vw"]
 [ext_resource type="AudioStream" uid="uid://cncrh8kpndbgp" path="res://audio/jump.mp3" id="9_k7h02"]
+[ext_resource type="Texture2D" uid="uid://bri21adsg0e02" path="res://graphics/elthens_pixel_art_scientists/IdleRedPotion/ScientistIdleRedPotion3.png" id="9_ue4ck"]
+[ext_resource type="Texture2D" uid="uid://lg7fl38nuu44" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning1.png" id="10_5esoe"]
 [ext_resource type="AudioStream" uid="uid://cchg7ssppn6ng" path="res://audio/shot_01.ogg" id="10_r6pwj"]
+[ext_resource type="Texture2D" uid="uid://cc8n2vpgxlv65" path="res://graphics/elthens_pixel_art_scientists/IdleRedPotion/ScientistIdleRedPotion4.png" id="10_v6wmf"]
+[ext_resource type="Texture2D" uid="uid://n3oraukllhf0" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning2.png" id="11_p68ur"]
+[ext_resource type="Texture2D" uid="uid://bh6uelcspepc" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning3.png" id="12_1fcb1"]
+[ext_resource type="Texture2D" uid="uid://g3danj0ejm5c" path="res://graphics/elthens_pixel_art_scientists/JumpRedPotion/ScientistJumpRedPotion.png" id="12_koy48"]
+[ext_resource type="Texture2D" uid="uid://dnxhw2w4f0037" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning4.png" id="13_bugp6"]
+[ext_resource type="Texture2D" uid="uid://bqtge54y1pwor" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning5.png" id="14_kd8l7"]
+[ext_resource type="Texture2D" uid="uid://b703oflamdw4m" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning6.png" id="15_gaf22"]
+[ext_resource type="Texture2D" uid="uid://bxakn0wbboulo" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning7.png" id="16_xqsl3"]
+[ext_resource type="Texture2D" uid="uid://7qx2fn0cpato" path="res://graphics/elthens_pixel_art_scientists/Running/ScientistRunning8.png" id="17_sg80y"]
+[ext_resource type="Texture2D" uid="uid://x5pwr0rgug8x" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion1.png" id="21_u6qsl"]
+[ext_resource type="Texture2D" uid="uid://d1avbdbrrtt45" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion2.png" id="22_b1u36"]
+[ext_resource type="Texture2D" uid="uid://bc8c6bsg5grbx" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion3.png" id="23_4ojne"]
+[ext_resource type="Texture2D" uid="uid://c6mde2b3ncmvy" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion4.png" id="24_xeg6o"]
+[ext_resource type="Texture2D" uid="uid://drw03c6hp4mka" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion5.png" id="25_tiptk"]
+[ext_resource type="Texture2D" uid="uid://pllckes0hp4v" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion6.png" id="26_hhlvp"]
+[ext_resource type="Texture2D" uid="uid://bwp11qs0ylfsk" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion7.png" id="27_yp5im"]
+[ext_resource type="Texture2D" uid="uid://2ua48ywwj3rl" path="res://graphics/elthens_pixel_art_scientists/RunningRedPotion/ScientistRunningRedPotion8.png" id="28_6bl0h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4p1pi"]
 resource_local_to_scene = true
@@ -21,7 +43,16 @@ shader_parameter/amount = 0.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ieg7t")
+"texture": ExtResource("3_5ds5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3rtbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_brkvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g3wqk")
 }],
 "loop": true,
 "name": &"idle",
@@ -29,7 +60,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_j17tb")
+"texture": ExtResource("7_gxtqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_maclv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ue4ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v6wmf")
 }],
 "loop": true,
 "name": &"idle_gun",
@@ -37,7 +77,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_a7p5x")
+"texture": ExtResource("8_b8dgw")
 }],
 "loop": true,
 "name": &"jump",
@@ -45,7 +85,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_chux7")
+"texture": ExtResource("12_koy48")
 }],
 "loop": true,
 "name": &"jump_gun",
@@ -53,10 +93,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ieg7t")
+"texture": ExtResource("10_5esoe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_a7p5x")
+"texture": ExtResource("11_p68ur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1fcb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bugp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kd8l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gaf22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xqsl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sg80y")
 }],
 "loop": true,
 "name": &"walk",
@@ -64,10 +122,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_j17tb")
+"texture": ExtResource("21_u6qsl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_chux7")
+"texture": ExtResource("22_b1u36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4ojne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xeg6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tiptk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hhlvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yp5im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6bl0h")
 }],
 "loop": true,
 "name": &"walk_gun",
@@ -75,8 +151,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qok2"]
-radius = 17.0
-height = 56.0
+radius = 20.0
+height = 80.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -85,12 +161,12 @@ script = ExtResource("1_p3vp5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_4p1pi")
-position = Vector2(2.38419e-07, 4.76837e-07)
+position = Vector2(0, -24)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_rolv3")
-animation = &"idle_gun"
+animation = &"idle"
 autoplay = "walk"
-flip_h = true
+speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0qok2")
