@@ -42,11 +42,12 @@ var glide_effects: Array[float] = [
 	0.25, # Size 4
 ]
 
-var has_gun     : bool = false
-var is_swimming : bool = false
-var health      : int  = 100
+var has_gun          : bool = false
+var is_swimming      : bool = false
+var head_above_water : bool = true
+var health           : int  = 100
 
-# TODO: Review how this is handled (probably after the game jam)
+# TODO: Review how this is handled (probably after the game jam) (this goes for basically eveything lmao)
 var can_shrink:bool = false
 
 func _ready():
@@ -90,7 +91,7 @@ func handle_input():
 
 func jump():
 	velocity.y = -jump_speed
-	if is_swimming: 
+	if is_swimming && !head_above_water: 
 		velocity.y *= 0.6
 	$Sounds/JumpSound.play()
 
@@ -195,9 +196,13 @@ func start_swimming():
 	is_swimming = true
 	if velocity.y > 0:
 		velocity.y *= 0.3
-	#gravity_multiplier *= 0.1
 	
 
 func stop_swimming():
 	is_swimming = false
-	#gravity_multiplier *= 10
+
+func _on_surface_detector_area_entered(area: Area2D) -> void:
+	head_above_water = false
+
+func _on_surface_detector_area_exited(area: Area2D) -> void:
+	head_above_water = true
