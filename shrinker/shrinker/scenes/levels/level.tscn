@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2ia1drt3yu51"]
+[gd_scene load_steps=17 format=4 uid="uid://2ia1drt3yu51"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dx2ny8uhi6m5v" path="res://scenes/entities/worm.tscn" id="5_uebae"]
 [ext_resource type="Texture2D" uid="uid://5ndf1hk58gps" path="res://graphics/level/tilesets/decoration_tilemap.png" id="7_dx145"]
 [ext_resource type="PackedScene" uid="uid://bm5nb2a6vxhpe" path="res://scenes/entities/potion_machine.tscn" id="7_i7cbh"]
+[ext_resource type="PackedScene" uid="uid://83ie1giq43x3" path="res://scenes/entities/rat.tscn" id="8_121db"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fu6d"]
 texture = ExtResource("3_4q3k8")
@@ -383,12 +384,16 @@ marker2 = NodePath("../../BeePathPoints/Marker2D2")
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
 position = Vector2(1888, 1016)
 
+[node name="Rat" parent="Enemies" instance=ExtResource("8_121db")]
+position = Vector2(1942, 2000)
+speed = 350
+
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Gun" parent="Items" instance=ExtResource("5_oude2")]
-position = Vector2(1274, 1494)
+position = Vector2(4996, 725)
 float_amplitude = 20.0
 
 [node name="BeePathPoints" type="Node2D" parent="."]

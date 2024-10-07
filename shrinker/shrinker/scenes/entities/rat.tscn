@@ -1,30 +1,92 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu4lgm6j38g3t"]
+[gd_scene load_steps=14 format=3 uid="uid://83ie1giq43x3"]
 
-[ext_resource type="Script" path="res://scenes/entities/rat.gd" id="1_026t1"]
-[ext_resource type="Texture2D" uid="uid://jav6v607tnug" path="res://icon.svg" id="1_spujb"]
+[ext_resource type="Script" path="res://scenes/entities/worm.gd" id="1_8gmq2"]
+[ext_resource type="Shader" path="res://scenes/entities/flicker.gdshader" id="2_b638e"]
+[ext_resource type="Texture2D" uid="uid://b42b5674viw8j" path="res://graphics/critters/rat/Rat1.png" id="3_ig6ry"]
+[ext_resource type="Texture2D" uid="uid://ddiit4ijvj266" path="res://graphics/critters/rat/Rat2.png" id="4_ie44b"]
+[ext_resource type="AudioStream" uid="uid://cchg7ssppn6ng" path="res://audio/shot_01.ogg" id="5_bgmv3"]
+[ext_resource type="Texture2D" uid="uid://cyonrsxqqsy3r" path="res://graphics/critters/rat/Rat3.png" id="5_ywvxb"]
+[ext_resource type="Texture2D" uid="uid://bs5xkrjnbkarn" path="res://graphics/critters/rat/Rat4.png" id="6_q7ye7"]
+[ext_resource type="Texture2D" uid="uid://cildma3m2gbn8" path="res://graphics/critters/rat/Rat5.png" id="7_58xj5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_60jg2"]
-size = Vector2(118, 120.275)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cekey"]
+resource_local_to_scene = true
+shader = ExtResource("2_b638e")
+shader_parameter/color = Color(0.992157, 0.992157, 0.988235, 1)
+shader_parameter/amount = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofhsy"]
-size = Vector2(78, 20)
+[sub_resource type="SpriteFrames" id="SpriteFrames_ag4mx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ig6ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ie44b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ywvxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q7ye7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_58xj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
-[node name="Rat" type="CharacterBody2D"]
-script = ExtResource("1_026t1")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhmaw"]
+radius = 48.0
+height = 128.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.4759, 0.4759)
-texture = ExtResource("1_spujb")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hgud"]
+size = Vector2(146, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plyin"]
+size = Vector2(9, 22.25)
+
+[node name="Rat" type="Area2D"]
+collision_layer = 4
+collision_mask = 19
+script = ExtResource("1_8gmq2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cekey")
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_ag4mx")
+autoplay = "default"
+frame_progress = 0.888987
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.461599)
-scale = Vector2(0.473275, 0.473275)
-shape = SubResource("RectangleShape2D_60jg2")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hhmaw")
 
-[node name="BoarderArea" type="Area2D" parent="."]
+[node name="BorderArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BoarderArea"]
-shape = SubResource("RectangleShape2D_ofhsy")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderArea"]
+position = Vector2(0, 42)
+shape = SubResource("RectangleShape2D_8hgud")
 
-[connection signal="body_entered" from="BoarderArea" to="." method="_on_boarder_area_body_entered"]
+[node name="BottomRightArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRightArea"]
+position = Vector2(67, 60)
+shape = SubResource("RectangleShape2D_plyin")
+
+[node name="BottomLeftArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftArea"]
+position = Vector2(-69.5, 58.875)
+shape = SubResource("RectangleShape2D_plyin")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bgmv3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="BorderArea" to="." method="_on_border_area_body_entered"]
+[connection signal="body_exited" from="BottomRightArea" to="." method="_on_bottom_right_area_body_exited"]
+[connection signal="body_exited" from="BottomLeftArea" to="." method="_on_bottom_left_area_body_exited"]
