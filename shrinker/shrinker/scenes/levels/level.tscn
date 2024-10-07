@@ -456,10 +456,13 @@ marker1 = NodePath("../../BeePathPoints/Marker2D")
 marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
-position = Vector2(1901, 1010)
+position = Vector2(1910, 1010)
+original_position = Vector2(1910, 1010)
 
 [node name="Rat" parent="Enemies" instance=ExtResource("8_121db")]
-position = Vector2(1942, 2000)
+position = Vector2(1945, 2000)
+original_scale = 8
+original_position = Vector2(1945, 2000)
 speed = 350
 
 [node name="Ant" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("9_e38xj")]

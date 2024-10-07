@@ -39,23 +39,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhmaw"]
-radius = 48.0
-height = 128.0
+radius = 6.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hgud"]
-size = Vector2(146, 2)
+size = Vector2(20, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plyin"]
-size = Vector2(9, 22.25)
+size = Vector2(2.5, 5.125)
 
 [node name="Rat" type="Area2D"]
+scale = Vector2(8, 8)
 collision_layer = 4
 collision_mask = 19
 script = ExtResource("1_8gmq2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_cekey")
-scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_ag4mx")
 autoplay = "default"
 frame_progress = 0.888987
@@ -67,19 +67,19 @@ shape = SubResource("CapsuleShape2D_hhmaw")
 [node name="BorderArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderArea"]
-position = Vector2(0, 42)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_8hgud")
 
 [node name="BottomRightArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRightArea"]
-position = Vector2(67, 60)
+position = Vector2(9, 8)
 shape = SubResource("RectangleShape2D_plyin")
 
 [node name="BottomLeftArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftArea"]
-position = Vector2(-69.5, 58.875)
+position = Vector2(-9, 8)
 shape = SubResource("RectangleShape2D_plyin")
 
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
