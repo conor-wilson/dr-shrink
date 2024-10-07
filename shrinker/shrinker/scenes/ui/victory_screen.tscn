@@ -1,16 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo3bv3v7gi5j4"]
+[gd_scene load_steps=11 format=3 uid="uid://bo3bv3v7gi5j4"]
 
 [ext_resource type="Script" path="res://scenes/ui/victory_screen.gd" id="1_y02ob"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_20r6w"]
+[ext_resource type="Texture2D" uid="uid://bnktylqk0yklb" path="res://graphics/critters/gameover/ScientistPanicking-Sheet.png" id="3_l3f1h"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_dfb8j"]
+[sub_resource type="LabelSettings" id="LabelSettings_4j2bu"]
 font = ExtResource("2_20r6w")
 font_size = 64
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0, 0.63, 0.105, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_8eblx"]
+[sub_resource type="LabelSettings" id="LabelSettings_3munn"]
 font = ExtResource("2_20r6w")
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ih0l8"]
+font = ExtResource("2_20r6w")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_35oig"]
+resource_name = "rat_eating"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rat:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_etghp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rat:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DrShrink:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ta5ug"]
+resource_name = "dr_shrink_panicking"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DrShrink:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pq8qs"]
+_data = {
+"RESET": SubResource("Animation_etghp"),
+"dr_shrink_panicking": SubResource("Animation_ta5ug"),
+"rat_eating": SubResource("Animation_35oig")
+}
 
 [node name="VictoryScreen" type="CanvasLayer"]
 script = ExtResource("1_y02ob")
@@ -18,24 +91,51 @@ script = ExtResource("1_y02ob")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.6975, 1, 0.67, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="Victory" type="Label" parent="."]
-offset_top = 229.0
-offset_right = 1152.0
-offset_bottom = 317.0
-text = " YOU WIN!"
-label_settings = SubResource("LabelSettings_dfb8j")
+[node name="GameOver" type="Label" parent="."]
+offset_top = 364.0
+offset_right = 1151.0
+offset_bottom = 452.0
+text = "CONGRATULATIONS, YOU WIN!"
+label_settings = SubResource("LabelSettings_4j2bu")
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="PressAnyKey" type="Label" parent="."]
-offset_top = 344.0
+offset_top = 467.0
 offset_right = 1152.0
-offset_bottom = 389.0
+offset_bottom = 512.0
 text = "PRESS SPACE TO RESTART"
-label_settings = SubResource("LabelSettings_8eblx")
+label_settings = SubResource("LabelSettings_3munn")
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -412.5
+offset_top = -216.0
+offset_right = 412.5
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DR. Shrink shrank to a singularity, doomed to drift alone in the vast emptiness of the infinite."
+label_settings = SubResource("LabelSettings_ih0l8")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DrShrink" type="Sprite2D" parent="."]
+position = Vector2(552, 272)
+scale = Vector2(4, 4)
+texture = ExtResource("3_l3f1h")
+hframes = 8
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pq8qs")
+}
+autoplay = "dr_shrink_panicking"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

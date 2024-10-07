@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dvmwmp2gigub3"]
 
-[ext_resource type="Script" path="res://scenes/ui/victory_screen.gd" id="1_rnl8k"]
+[ext_resource type="Script" path="res://scenes/ui/game_over_screen.gd" id="1_pjwek"]
 [ext_resource type="Texture2D" uid="uid://2c32bu0qt7x2" path="res://graphics/critters/gameover/RatEating-Sheet.png" id="2_50aig"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_emw2h"]
 [ext_resource type="Texture2D" uid="uid://bnktylqk0yklb" path="res://graphics/critters/gameover/ScientistPanicking-Sheet.png" id="3_ramvj"]
@@ -87,7 +87,7 @@ _data = {
 }
 
 [node name="GameOverScreen" type="CanvasLayer"]
-script = ExtResource("1_rnl8k")
+script = ExtResource("1_pjwek")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0

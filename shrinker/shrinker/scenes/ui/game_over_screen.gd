@@ -5,10 +5,6 @@ signal restart
 var waiting_for_space:bool = false
 
 func _process(delta: float) -> void:
-	
-	if visible:
-		$DrShrink.rotate(delta)
-	
 	if Input.is_action_just_pressed("Shoot") && waiting_for_space:
 		restart.emit()
 		waiting_for_space = false
