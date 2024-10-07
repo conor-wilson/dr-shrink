@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://2ia1drt3yu51"]
+[gd_scene load_steps=20 format=4 uid="uid://2ia1drt3yu51"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bm5nb2a6vxhpe" path="res://scenes/entities/potion_machine.tscn" id="7_i7cbh"]
 [ext_resource type="PackedScene" uid="uid://83ie1giq43x3" path="res://scenes/entities/rat.tscn" id="8_121db"]
 [ext_resource type="PackedScene" uid="uid://ge2uyc2b15sk" path="res://scenes/entities/ant.tscn" id="9_e38xj"]
+[ext_resource type="PackedScene" uid="uid://br2fmjejqovgu" path="res://scenes/entities/jelly_fish.tscn" id="10_1bebd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fu6d"]
 texture = ExtResource("3_4q3k8")
@@ -394,6 +395,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_apgsm")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqdsf"]
+size = Vector2(1216, 731)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olvs5"]
 texture = ExtResource("7_dx145")
 0:0/0 = 0
@@ -415,9 +419,6 @@ texture = ExtResource("7_dx145")
 
 [sub_resource type="TileSet" id="TileSet_jine5"]
 sources/0 = SubResource("TileSetAtlasSource_olvs5")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqdsf"]
-size = Vector2(1216, 731)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_iyron")
@@ -445,7 +446,6 @@ has_red = true
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
 position = Vector2(1095, 898)
-current_size = 4
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -468,6 +468,13 @@ player_detect_distance = 256.0
 marker1 = NodePath("../../AntPathPoints/Marker2D")
 marker2 = NodePath("../../AntPathPoints/Marker2D2")
 
+[node name="JellyFish" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_1bebd")]
+position = Vector2(4227, 1399)
+speed = 75.0
+player_detect_distance = 256.0
+marker1 = NodePath("../../JellyFishPathPoints/Marker2D")
+marker2 = NodePath("../../JellyFishPathPoints/Marker2D2")
+
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Items" type="Node2D" parent="."]
@@ -475,6 +482,13 @@ marker2 = NodePath("../../AntPathPoints/Marker2D2")
 [node name="Gun" parent="Items" instance=ExtResource("5_oude2")]
 position = Vector2(4996, 725)
 float_amplitude = 20.0
+
+[node name="WaterZone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterZone"]
+position = Vector2(4480, 1650.5)
+shape = SubResource("RectangleShape2D_cqdsf")
 
 [node name="BeePathPoints" type="Node2D" parent="."]
 
@@ -495,12 +509,13 @@ position = Vector2(3018, 1414)
 [node name="Marker2D2" type="Marker2D" parent="AntPathPoints"]
 position = Vector2(3208, 1354)
 
-[node name="WaterZone" type="Area2D" parent="."]
-collision_mask = 2
+[node name="JellyFishPathPoints" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterZone"]
-position = Vector2(4480, 1650.5)
-shape = SubResource("RectangleShape2D_cqdsf")
+[node name="Marker2D" type="Marker2D" parent="JellyFishPathPoints"]
+position = Vector2(3988, 1491)
+
+[node name="Marker2D2" type="Marker2D" parent="JellyFishPathPoints"]
+position = Vector2(4602, 1562)
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
 [connection signal="shrink_me" from="Player" to="." method="_on_player_shrink_me"]

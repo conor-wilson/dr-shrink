@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://br2fmjejqovgu"]
+
+[ext_resource type="Script" path="res://scenes/entities/bee.gd" id="1_2i3yj"]
+[ext_resource type="Shader" path="res://scenes/entities/flicker.gdshader" id="1_sskj4"]
+[ext_resource type="Texture2D" uid="uid://dnmphir156fvj" path="res://graphics/critters/jellyfish/JellyFish1.png" id="3_mljhe"]
+[ext_resource type="Texture2D" uid="uid://clyikue3txm2s" path="res://graphics/critters/jellyfish/JellyFish2.png" id="4_1qvlr"]
+[ext_resource type="AudioStream" uid="uid://cchg7ssppn6ng" path="res://audio/shot_01.ogg" id="4_j4ohu"]
+[ext_resource type="Texture2D" uid="uid://b516axf8w78y0" path="res://graphics/critters/jellyfish/JellyFish3.png" id="5_1w4qk"]
+[ext_resource type="Texture2D" uid="uid://cvk47c21fbd1x" path="res://graphics/critters/jellyfish/JellyFish4.png" id="6_7vnpq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8pny"]
+resource_local_to_scene = true
+shader = ExtResource("1_sskj4")
+shader_parameter/color = Color(0.992157, 0.992157, 0.988235, 1)
+shader_parameter/amount = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yocqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mljhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1qvlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1w4qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7vnpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mw7gk"]
+radius = 28.0
+height = 80.0
+
+[node name="JellyFish" type="Area2D"]
+collision_layer = 4
+collision_mask = 19
+script = ExtResource("1_2i3yj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_m8pny")
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_yocqp")
+autoplay = "default"
+frame_progress = 0.176098
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mw7gk")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_j4ohu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
