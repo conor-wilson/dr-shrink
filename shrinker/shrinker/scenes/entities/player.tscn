@@ -202,5 +202,6 @@ collision_layer = 2
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_c4ydg")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="area_entered" from="SurfaceDetector" to="." method="_on_surface_detector_area_entered"]
 [connection signal="area_exited" from="SurfaceDetector" to="." method="_on_surface_detector_area_exited"]

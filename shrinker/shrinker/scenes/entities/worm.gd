@@ -1,17 +1,23 @@
 extends Area2D
 
+@export var max_health := 2
 @export var health := 2
 var direction:Vector2 = Vector2.RIGHT
 @export var speed:int = 50
+@export var damage:int = 10
 
 func _process(delta: float) -> void:
-	move(delta)
+	if visible:
+		move(delta)
 
 func check_death(): 
 	if health == 0:
-		queue_free()
+		hide()
 
 func _on_area_entered(area: Area2D) -> void:
+	
+	if !visible:
+		return
 	
 	# Confirm that this is a bullet (and then delete the bullet)
 	if area is not Bullet:
@@ -29,20 +35,38 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	# Check for death
 	await $DamageSound.finished
+	
+	print(health)
 	check_death()
 
 func _on_body_entered(body: Node2D) -> void:
+	
+	if !visible:
+		return
+	
 	if body is Player:
-		body.damage(10)
+		body.damage(damage)
 
 func move(delta:float):
+	
+	if !visible:
+		return
+	
 	position += direction * speed * delta
 
 func _on_border_area_body_entered(body: Node2D) -> void:
+	
+	if !visible:
+		return
+	
 	direction = -direction
 	set_sprite_direction()
 
 func set_sprite_direction():
+	
+	if !visible:
+		return
+		
 	if direction.x >= 0:
 		$AnimatedSprite2D.flip_h = false
 	else:
@@ -51,9 +75,20 @@ func set_sprite_direction():
 
 
 func _on_bottom_right_area_body_exited(body: Node2D) -> void:
+	
+	if !visible:
+		return
+	
 	direction = Vector2.LEFT
 	set_sprite_direction()
 
 func _on_bottom_left_area_body_exited(body: Node2D) -> void:
+	
+	if !visible:
+		return
+	
 	direction = Vector2.RIGHT
 	set_sprite_direction()
+
+func reset_health():
+	health = max_health

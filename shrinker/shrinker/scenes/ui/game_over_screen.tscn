@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvmwmp2gigub3"]
+[gd_scene load_steps=5 format=3 uid="uid://dvmwmp2gigub3"]
 
 [ext_resource type="Script" path="res://scenes/ui/victory_screen.gd" id="1_rnl8k"]
+[ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_emw2h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3fk5y"]
+font = ExtResource("2_emw2h")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3wpxn"]
+font = ExtResource("2_emw2h")
 font_size = 32
 
 [node name="GameOverScreen" type="CanvasLayer"]
@@ -18,19 +21,19 @@ offset_bottom = 648.0
 color = Color(1, 0.48, 0.48, 1)
 
 [node name="GameOver" type="Label" parent="."]
-offset_left = 366.0
 offset_top = 253.0
-offset_right = 788.0
+offset_right = 1151.0
 offset_bottom = 341.0
-text = "GAME OVER :("
+text = "GAME OVER"
 label_settings = SubResource("LabelSettings_3fk5y")
+horizontal_alignment = 1
 
 [node name="PressAnyKey" type="Label" parent="."]
-offset_left = 381.0
 offset_top = 359.0
-offset_right = 773.0
+offset_right = 1152.0
 offset_bottom = 404.0
 text = "PRESS SPACE TO RESTART"
 label_settings = SubResource("LabelSettings_3wpxn")
+horizontal_alignment = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

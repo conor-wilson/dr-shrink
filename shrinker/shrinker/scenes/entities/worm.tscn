@@ -74,6 +74,7 @@ stream = ExtResource("5_1vunh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="body_entered" from="BorderArea" to="." method="_on_border_area_body_entered"]
 [connection signal="body_exited" from="BottomRightArea" to="." method="_on_bottom_right_area_body_exited"]
 [connection signal="body_exited" from="BottomLeftArea" to="." method="_on_bottom_left_area_body_exited"]

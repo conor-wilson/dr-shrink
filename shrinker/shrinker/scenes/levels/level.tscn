@@ -444,7 +444,7 @@ tile_set = SubResource("TileSet_3foop")
 position = Vector2(512, 1408)
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
-position = Vector2(853, 672)
+position = Vector2(864, 678)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -518,6 +518,7 @@ position = Vector2(3988, 1491)
 [node name="Marker2D2" type="Marker2D" parent="JellyFishPathPoints"]
 position = Vector2(4602, 1562)
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
 [connection signal="shrank" from="Player" to="." method="_on_player_shrank"]

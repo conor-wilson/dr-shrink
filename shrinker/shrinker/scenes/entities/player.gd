@@ -57,10 +57,11 @@ func _ready():
 	set_variable_params()
 
 func _process(delta: float) -> void:
-	apply_gravity(delta)
-	handle_input()
-	set_animation()
-	move_and_slide()
+	if visible:
+		apply_gravity(delta)
+		handle_input()
+		set_animation()
+		move_and_slide()
 
 func apply_gravity(delta: float):
 	if not is_on_floor():
@@ -207,3 +208,15 @@ func _on_surface_detector_area_entered(area: Area2D) -> void:
 
 func _on_surface_detector_area_exited(area: Area2D) -> void:
 	head_above_water = true
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		health = 100
+		current_size = 4
+		has_gun = false
+		is_swimming = false
+		position = Vector2(864, 678)
+		velocity = Vector2.ZERO
+		set_sprite_size()
+		set_variable_params()

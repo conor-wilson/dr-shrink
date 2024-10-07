@@ -1,15 +1,14 @@
 extends CanvasLayer
 
+signal restart
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var waiting_for_space:bool = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	if Input.is_action_just_pressed("Shoot") && waiting_for_space:
+		restart.emit()
+		waiting_for_space = false
+		
 
 func display():
 	show()
@@ -21,3 +20,5 @@ func _on_visibility_changed() -> void:
 		$PressAnyKey.hide()
 		await get_tree().create_timer(1).timeout
 		$PressAnyKey.show()
+		waiting_for_space = true
+		

@@ -28,9 +28,11 @@ func _on_water_zone_body_exited(body: Node2D) -> void:
 
 func _on_player_shrank() -> void:
 	$PotionMachine.has_red = false
-	$Items/Gun.enable()
+	$Items/Gun.show()
 	$PotionMachine.set_sprite()
-	$Items.queue_redraw()
+	for enemy in $Enemies.get_children():
+		enemy.show()
+		enemy.reset_health()
 
 
 func _on_player_victory() -> void:
@@ -39,3 +41,8 @@ func _on_player_victory() -> void:
 
 func _on_player_dead() -> void:
 	game_over.emit()
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		$Player.show()

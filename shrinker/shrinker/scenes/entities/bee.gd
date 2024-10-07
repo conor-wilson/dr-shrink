@@ -7,21 +7,26 @@ extends Area2D
 @export var marker1: Marker2D
 @export var marker2: Marker2D
 
+@export var max_health := 3
 var health := 3
 @onready var target = marker2
 @onready var player:Player = get_tree().get_first_node_in_group('Player') # <-- COOL!
 var following:bool 
 
 func _process(delta: float) -> void:
-	set_target()
-	detect_player()
-	move(delta)
+	if visible:
+		set_target()
+		detect_player()
+		move(delta)
 
 func check_death(): 
 	if health == 0:
-		queue_free()
+		hide()
 
 func _on_area_entered(area: Area2D) -> void:
+	
+	if !visible:
+		return
 	
 	# Confirm that this is a bullet (and then delete the bullet)
 	if area is not Bullet:
@@ -42,10 +47,17 @@ func _on_area_entered(area: Area2D) -> void:
 	check_death()
 
 func _on_body_entered(body: Node2D) -> void:
+	
+	if !visible:
+		return
+	
 	if body is Player:
 		body.damage(20)
 
 func move(delta: float):
+	
+	if !visible:
+		return
 	
 	# Parse the direction the bee should be flying
 	var direction : Vector2
@@ -59,12 +71,20 @@ func move(delta: float):
 	set_sprite_direction(direction)
 
 func set_target():
+	
+	if !visible:
+		return
+	
 	if target == marker2 && position.distance_to(marker2.position) < 10:
 		target = marker1
 	elif target == marker1 && position.distance_to(marker1.position) < 10:
 		target = marker2
 
 func set_sprite_direction(direction:Vector2):
+	
+	if !visible:
+		return
+	
 	if direction.x >= 0:
 		$AnimatedSprite2D.flip_h = false
 	else:
@@ -72,4 +92,15 @@ func set_sprite_direction(direction:Vector2):
 
 # detect_player detects if the bee is close to the player.
 func detect_player():
+	
+	if !visible:
+		return
+	
 	following = position.distance_to(player.position) < player_detect_distance
+
+func reset_health():
+	
+	if !visible:
+		return
+	
+	health = max_health

@@ -36,3 +36,5 @@ visible = false
 
 [connection signal="game_over" from="Level" to="." method="_on_level_game_over"]
 [connection signal="victory" from="Level" to="." method="_on_level_victory"]
+[connection signal="restart" from="VictoryScreen" to="." method="_on_victory_screen_restart"]
+[connection signal="restart" from="GameOverScreen" to="." method="_on_game_over_screen_restart"]
