@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c1p4badr56mpo" path="res://audio/power_up_01.ogg" id="3_exp5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twyhu"]
-size = Vector2(32, 36)
+size = Vector2(80, 80)
 
 [node name="Gun" type="Area2D"]
 collision_layer = 8
@@ -13,12 +13,11 @@ collision_mask = 2
 script = ExtResource("1_3sqi5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(8, 8)
 texture = ExtResource("2_du7x5")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_twyhu")
 
 [node name="CollectSound" type="AudioStreamPlayer2D" parent="."]

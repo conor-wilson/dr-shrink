@@ -8,6 +8,7 @@ func _on_player_fire_bullet(pos:Vector2, dir:Vector2) -> void:
 	var bullet = bullet_scene.instantiate() as Bullet
 	bullet.position = pos
 	bullet.set_direction(dir)
+	bullet.set_sprite_size(pow(2, $Player.current_size))
 	$Bullets.add_child(bullet)
 
 func _on_player_shrink_me() -> void:

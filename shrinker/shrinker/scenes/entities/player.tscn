@@ -1,11 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://qqpy727wo2k3"]
+[gd_scene load_steps=36 format=3 uid="uid://qqpy727wo2k3"]
 
 [ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_p3vp5"]
 [ext_resource type="Shader" path="res://scenes/entities/flicker.gdshader" id="2_fk600"]
 [ext_resource type="Texture2D" uid="uid://bt00hs3w1tlky" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle1.png" id="3_5ds5o"]
 [ext_resource type="Texture2D" uid="uid://4c4r0passx3b" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle2.png" id="4_3rtbb"]
 [ext_resource type="Texture2D" uid="uid://b1w64alqlndyx" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle3.png" id="5_brkvq"]
-[ext_resource type="Texture2D" uid="uid://cudog6n220vma" path="res://graphics/bullet/fire.png" id="6_3i83o"]
 [ext_resource type="Texture2D" uid="uid://cwmavrmrij5vs" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle4.png" id="6_g3wqk"]
 [ext_resource type="Texture2D" uid="uid://b88llrtponnha" path="res://graphics/elthens_pixel_art_scientists/IdleRedPotion/ScientistIdleRedPotion1.png" id="7_gxtqh"]
 [ext_resource type="Texture2D" uid="uid://cqbq8eroubotf" path="res://graphics/elthens_pixel_art_scientists/Jump/ScientistJump.png" id="8_b8dgw"]
@@ -185,30 +184,15 @@ one_shot = true
 wait_time = 0.6
 one_shot = true
 
-[node name="Fire" type="Node2D" parent="."]
-
-[node name="FireLeft" type="Sprite2D" parent="Fire"]
-visible = false
-position = Vector2(-42, 8)
-scale = Vector2(4, 4)
-texture = ExtResource("6_3i83o")
-flip_h = true
-
-[node name="FireRight" type="Sprite2D" parent="Fire"]
-visible = false
-position = Vector2(42, 8)
-scale = Vector2(4, 4)
-texture = ExtResource("6_3i83o")
-
 [node name="Sounds" type="Node" parent="."]
 
-[node name="FireSound" type="AudioStreamPlayer2D" parent="Sounds"]
+[node name="FireSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("8_w42vw")
 
-[node name="JumpSound" type="AudioStreamPlayer2D" parent="Sounds"]
+[node name="JumpSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("9_k7h02")
 
-[node name="DamageSound" type="AudioStreamPlayer2D" parent="Sounds"]
+[node name="DamageSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("10_r6pwj")
 
 [node name="SurfaceDetector" type="Area2D" parent="."]
