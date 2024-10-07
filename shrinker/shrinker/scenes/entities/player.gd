@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 signal fire_bullet(pos:Vector2, dir:Vector2)
-signal shrink_me
+signal shrank
 
 const bullet_dist_from_player := 56
 
@@ -170,9 +170,11 @@ func damage(amount:int):
 
 func shrink():
 	current_size -= 1
+	health = 100
+	has_gun = false
 	set_sprite_size()
 	set_variable_params()
-	#shrink_me.emit()
+	shrank.emit()
 
 func set_sprite_size():
 	$AnimatedSprite2D.scale = Vector2(1,1)* pow(2, current_size)

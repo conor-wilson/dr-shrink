@@ -23,3 +23,10 @@ func _on_water_zone_body_entered(body: Node2D) -> void:
 func _on_water_zone_body_exited(body: Node2D) -> void:
 	if body is Player:
 		body.stop_swimming()
+
+
+func _on_player_shrank() -> void:
+	$PotionMachine.has_red = false
+	$Items/Gun.enable()
+	$PotionMachine.set_sprite()
+	$Items.queue_redraw()

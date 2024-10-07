@@ -444,7 +444,7 @@ tile_set = SubResource("TileSet_3foop")
 position = Vector2(512, 1408)
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
-position = Vector2(1095, 898)
+position = Vector2(853, 672)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -481,7 +481,7 @@ marker2 = NodePath("../../JellyFishPathPoints/Marker2D2")
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Gun" parent="Items" instance=ExtResource("5_oude2")]
-position = Vector2(4999, 673)
+position = Vector2(4993, 656)
 float_amplitude = 60.0
 
 [node name="WaterZone" type="Area2D" parent="."]
@@ -519,6 +519,6 @@ position = Vector2(3988, 1491)
 position = Vector2(4602, 1562)
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
-[connection signal="shrink_me" from="Player" to="." method="_on_player_shrink_me"]
+[connection signal="shrank" from="Player" to="." method="_on_player_shrank"]
 [connection signal="body_entered" from="WaterZone" to="." method="_on_water_zone_body_entered"]
 [connection signal="body_exited" from="WaterZone" to="." method="_on_water_zone_body_exited"]
