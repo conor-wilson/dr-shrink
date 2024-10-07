@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bnxs6v3lltari" path="res://graphics/custom/PotionMachinePurple-Sheet.png" id="1_fesuh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5aj7t"]
-radius = 32.0
-height = 68.0
+radius = 129.0
+height = 258.0
 
 [sub_resource type="Animation" id="Animation_yu5xh"]
 resource_name = "purple_bubbles"
@@ -51,7 +51,7 @@ collision_mask = 18
 script = ExtResource("1_524jn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(8, 8)
 texture = ExtResource("1_fesuh")
 hframes = 8
 
