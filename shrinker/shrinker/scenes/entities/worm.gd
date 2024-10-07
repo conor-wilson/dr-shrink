@@ -32,9 +32,7 @@ func _on_area_entered(area: Area2D) -> void:
 	check_death()
 
 func _on_body_entered(body: Node2D) -> void:
-	print("HEY!")
 	if body is Player:
-		print("HO!")
 		body.damage(10)
 
 func move(delta:float):
