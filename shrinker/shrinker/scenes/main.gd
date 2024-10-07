@@ -33,31 +33,12 @@ func _on_level_game_over() -> void:
 
 func _on_game_over_screen_restart() -> void:
 	$TitleScreen.show()
-	print("RESTARTING!!!")
 	$GameOverScreen.hide()
-	#$UI.show()
-	#$Music.play()
-	#$Level.show()
-	#$UI.show_first_dialogue()
-	#await $UI.done_dialogue
-	#$UI.hide_all_dialogue()
-	#$UI.show_second_dialogue()
-	#await $UI.done_dialogue
-	#$UI.hide_all_dialogue()
 
 
 func _on_victory_screen_restart() -> void:
 	$TitleScreen.show()
 	$VictoryScreen.hide()
-	#$UI.show()
-	#$Music.play()
-	#$Level.show()
-	#$UI.show_first_dialogue()
-	#await $UI.done_dialogue
-	#$UI.hide_all_dialogue()
-	#$UI.show_second_dialogue()
-	#await $UI.done_dialogue
-	#$UI.hide_all_dialogue()
 
 
 func _on_level_potion_picked_up() -> void:

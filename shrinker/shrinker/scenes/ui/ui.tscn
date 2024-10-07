@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3jm7al5nk63m"]
+[gd_scene load_steps=9 format=3 uid="uid://c3jm7al5nk63m"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_eydjb"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_3avod"]
+[ext_resource type="Texture2D" uid="uid://b2hhaypcff4cu" path="res://graphics/custom/DialogueBox.png" id="2_ayu0w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yutag"]
 bg_color = Color(0.233925, 0.233925, 0.233925, 1)
@@ -47,26 +48,15 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hkoue")
 value = 30.0
 show_percentage = false
 
-[node name="DialogueRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -305.0
-offset_top = -280.0
-offset_right = 305.0
-offset_bottom = -72.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.53, 0.53, 0.53, 1)
+[node name="DialogueRect" type="Sprite2D" parent="."]
+position = Vector2(576, 148)
+texture = ExtResource("2_ayu0w")
 
 [node name="PressSpace" type="Label" parent="DialogueRect"]
-layout_mode = 0
-offset_left = 523.0
-offset_top = 178.0
-offset_right = 596.0
-offset_bottom = 201.0
+offset_left = 224.0
+offset_top = 74.0
+offset_right = 297.0
+offset_bottom = 97.0
 text = "[SPACE]..."
 label_settings = SubResource("LabelSettings_xqta5")
 horizontal_alignment = 2
