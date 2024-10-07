@@ -27,6 +27,7 @@ position = Vector2(-57, 15)
 stream = ExtResource("3_pdgux")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [node name="VictoryScreen" parent="." instance=ExtResource("5_r7y8h")]
 visible = false
