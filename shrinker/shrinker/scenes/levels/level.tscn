@@ -456,7 +456,7 @@ marker1 = NodePath("../../BeePathPoints/Marker2D")
 marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="Enemies" instance=ExtResource("5_uebae")]
-position = Vector2(1888, 1016)
+position = Vector2(1901, 1010)
 
 [node name="Rat" parent="Enemies" instance=ExtResource("8_121db")]
 position = Vector2(1942, 2000)
