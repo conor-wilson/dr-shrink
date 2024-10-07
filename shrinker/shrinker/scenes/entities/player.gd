@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 signal fire_bullet(pos:Vector2, dir:Vector2)
 signal shrank
+signal victory
 
 const bullet_dist_from_player := 56
 
@@ -169,6 +170,10 @@ func damage(amount:int):
 	$Timers/InvincibilityCooldown.start()
 
 func shrink():
+	
+	if current_size == 1:
+		victory.emit()
+	
 	current_size -= 1
 	health = 100
 	has_gun = false

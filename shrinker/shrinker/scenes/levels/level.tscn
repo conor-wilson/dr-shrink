@@ -520,5 +520,6 @@ position = Vector2(4602, 1562)
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
 [connection signal="shrank" from="Player" to="." method="_on_player_shrank"]
+[connection signal="victory" from="Player" to="." method="_on_player_victory"]
 [connection signal="body_entered" from="WaterZone" to="." method="_on_water_zone_body_entered"]
 [connection signal="body_exited" from="WaterZone" to="." method="_on_water_zone_body_exited"]

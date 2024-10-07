@@ -30,3 +30,7 @@ func _on_player_shrank() -> void:
 	$Items/Gun.enable()
 	$PotionMachine.set_sprite()
 	$Items.queue_redraw()
+
+
+func _on_player_victory() -> void:
+	victory.emit()
