@@ -450,6 +450,8 @@ position = Vector2(1095, 898)
 
 [node name="Bee" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("3_b4y1d")]
 position = Vector2(3070, 838)
+speed = 75.0
+player_detect_distance = 256.0
 marker1 = NodePath("../../BeePathPoints/Marker2D")
 marker2 = NodePath("../../BeePathPoints/Marker2D2")
 
