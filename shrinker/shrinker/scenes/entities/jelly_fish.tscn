@@ -35,17 +35,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mw7gk"]
-radius = 28.0
-height = 80.0
+radius = 7.0
+height = 20.0
 
 [node name="JellyFish" type="Area2D"]
+scale = Vector2(4, 4)
 collision_layer = 4
 collision_mask = 19
 script = ExtResource("1_2i3yj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_m8pny")
-scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_yocqp")
 autoplay = "default"
 frame_progress = 0.176098

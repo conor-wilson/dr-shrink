@@ -102,3 +102,8 @@ func _on_bottom_left_area_body_exited(body: Node2D) -> void:
 func reset_health():
 	scale = original_scale*Vector2.ONE
 	position = original_position
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		reset_health()

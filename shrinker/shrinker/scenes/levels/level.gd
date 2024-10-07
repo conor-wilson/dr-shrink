@@ -27,13 +27,16 @@ func _on_water_zone_body_exited(body: Node2D) -> void:
 
 
 func _on_player_shrank() -> void:
+	reset_level()
+
+func reset_level():
 	$PotionMachine.has_red = false
 	$Items/Gun.show()
 	$PotionMachine.set_sprite()
 	for enemy in $Enemies.get_children():
 		enemy.show()
 		enemy.reset_health()
-
+	
 
 func _on_player_victory() -> void:
 	victory.emit()
@@ -46,3 +49,4 @@ func _on_player_dead() -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		$Player.show()
+		reset_level()

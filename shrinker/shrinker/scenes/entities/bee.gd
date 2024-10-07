@@ -2,18 +2,24 @@ extends Area2D
 
 # TODO: This de-duplicate the enemy code
 
+@export var original_scale := 4
 @export var speed: float = 25
 @export var player_detect_distance : float = 64
 @export var marker1: Marker2D
 @export var marker2: Marker2D
 @export var damage:int = 20
-@export var player_size_damage_threshold:int = 3
 
-@export var max_health := 3
-var health := 3
 @onready var target = marker2
 @onready var player:Player = get_tree().get_first_node_in_group('Player') # <-- COOL!
 var following:bool 
+
+var damage_thresholds : Array[int] = [
+	0,
+	1,
+	2,
+	4,
+	8
+]
 
 func _process(delta: float) -> void:
 	if visible:
@@ -22,7 +28,7 @@ func _process(delta: float) -> void:
 		move(delta)
 
 func check_death(): 
-	if health == 0:
+	if scale == Vector2.ONE:
 		hide()
 
 func _on_area_entered(area: Area2D) -> void:
@@ -36,7 +42,7 @@ func _on_area_entered(area: Area2D) -> void:
 	area.queue_free()
 	
 	# Damage the worm
-	health -= 1
+	scale -= Vector2.ONE
 	$DamageSound.play()
 	
 	# Flicker the worm using the shader
@@ -54,7 +60,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	if body is Player:
-		if body.current_size <= player_size_damage_threshold:
+		if scale.x >= damage_thresholds[body.current_size]:
 			body.damage(damage)
 
 func move(delta: float):
@@ -106,4 +112,4 @@ func reset_health():
 	if !visible:
 		return
 	
-	health = max_health
+	scale = original_scale*Vector2.ONE

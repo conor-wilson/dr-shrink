@@ -467,6 +467,7 @@ speed = 350
 
 [node name="Ant" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("9_e38xj")]
 position = Vector2(3104, 1349)
+original_scale = 2
 speed = 75.0
 player_detect_distance = 256.0
 marker1 = NodePath("../../AntPathPoints/Marker2D")
