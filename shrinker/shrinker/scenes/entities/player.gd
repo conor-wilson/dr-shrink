@@ -42,8 +42,9 @@ var glide_effects: Array[float] = [
 	0.25, # Size 4
 ]
 
-var has_gun : bool = false
-var health  : int  = 100
+var has_gun     : bool = false
+var is_swimming : bool = false
+var health      : int  = 100
 
 # TODO: Review how this is handled (probably after the game jam)
 var can_shrink:bool = false
@@ -61,8 +62,11 @@ func _process(delta: float) -> void:
 func apply_gravity(delta: float):
 	if not is_on_floor():
 		var vel_due_to_gravity:Vector2 = get_gravity() * gravity_multiplier * delta
-		if velocity.y > 0 && Input.is_action_pressed("Jump"):
-			vel_due_to_gravity *= glide_effect
+		if velocity.y > 0:
+			if Input.is_action_pressed("Jump"):
+				vel_due_to_gravity *= glide_effect
+			if is_swimming:
+				vel_due_to_gravity *= 0.1
 		
 		velocity += vel_due_to_gravity
 
@@ -72,7 +76,7 @@ func handle_input():
 		shrink()
 	
 	# Handle jump input
-	if Input.is_action_just_pressed("Jump") && is_on_floor():
+	if Input.is_action_just_pressed("Jump") && (is_on_floor() or is_swimming):
 		jump()
 	
 	# Handle shoot input
@@ -86,6 +90,8 @@ func handle_input():
 
 func jump():
 	velocity.y = -jump_speed
+	if is_swimming: 
+		velocity.y *= 0.6
 	$Sounds/JumpSound.play()
 
 func shoot():
@@ -184,3 +190,14 @@ func set_variable_params():
 	jump_speed = jump_speeds[current_size]
 	gravity_multiplier = grav_multipliers[current_size]
 	glide_effect = glide_effects[current_size]
+
+func start_swimming():
+	is_swimming = true
+	if velocity.y > 0:
+		velocity.y *= 0.3
+	#gravity_multiplier *= 0.1
+	
+
+func stop_swimming():
+	is_swimming = false
+	#gravity_multiplier *= 10
