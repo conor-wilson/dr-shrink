@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 signal fire_bullet(pos:Vector2, dir:Vector2)
 signal shrank
 signal victory
+signal dead
 
 const bullet_dist_from_player := 56
 
@@ -148,7 +149,7 @@ func set_direction(direction:float):
 
 func check_death():
 	if health <= 0:
-		get_tree().quit()
+		dead.emit()
 
 func damage(amount:int):
 	

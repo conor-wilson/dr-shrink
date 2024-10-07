@@ -1,6 +1,7 @@
 extends Node2D
 
 signal victory
+signal game_over
 
 const bullet_scene : PackedScene = preload("res://scenes/levels/bullet.tscn")
 
@@ -34,3 +35,7 @@ func _on_player_shrank() -> void:
 
 func _on_player_victory() -> void:
 	victory.emit()
+
+
+func _on_player_dead() -> void:
+	game_over.emit()

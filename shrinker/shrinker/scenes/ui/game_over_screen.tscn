@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvmwmp2gigub3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fk5y"]
+font_size = 64
+
+[node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0.48, 0.48, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 366.0
+offset_top = 253.0
+offset_right = 788.0
+offset_bottom = 341.0
+text = "GAME OVER :("
+label_settings = SubResource("LabelSettings_3fk5y")

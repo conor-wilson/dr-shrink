@@ -5,3 +5,9 @@ func _on_level_victory() -> void:
 	$UI.hide()
 	$Music.stop()
 	$VictoryScreen.show()
+
+
+func _on_level_game_over() -> void:
+	$UI.hide()
+	$Music.stop()
+	$GameOverScreen.show()

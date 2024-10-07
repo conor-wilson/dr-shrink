@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvedm0us3v54"]
+[gd_scene load_steps=7 format=3 uid="uid://dvedm0us3v54"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dfkcu"]
 [ext_resource type="PackedScene" uid="uid://c3jm7al5nk63m" path="res://scenes/ui/ui.tscn" id="2_03qlr"]
 [ext_resource type="PackedScene" uid="uid://2ia1drt3yu51" path="res://scenes/levels/level.tscn" id="2_aqpo2"]
 [ext_resource type="AudioStream" uid="uid://cwu1bbrevcvqg" path="res://audio/bg_music.ogg" id="3_pdgux"]
 [ext_resource type="PackedScene" uid="uid://bo3bv3v7gi5j4" path="res://scenes/ui/victory_screen.tscn" id="5_r7y8h"]
+[ext_resource type="PackedScene" uid="uid://dvmwmp2gigub3" path="res://scenes/ui/game_over_screen.tscn" id="6_6u0ch"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_dfkcu")
@@ -22,7 +23,7 @@ position = Vector2(-57, 15)
 
 [node name="UI" parent="." instance=ExtResource("2_03qlr")]
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pdgux")
 volume_db = -10.0
 autoplay = true
@@ -30,4 +31,8 @@ autoplay = true
 [node name="VictoryScreen" parent="." instance=ExtResource("5_r7y8h")]
 visible = false
 
+[node name="GameOverScreen" parent="." instance=ExtResource("6_6u0ch")]
+visible = false
+
+[connection signal="game_over" from="Level" to="." method="_on_level_game_over"]
 [connection signal="victory" from="Level" to="." method="_on_level_victory"]
