@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://2ia1drt3yu51"]
+[gd_scene load_steps=18 format=4 uid="uid://2ia1drt3yu51"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_iyron"]
 [ext_resource type="PackedScene" uid="uid://qqpy727wo2k3" path="res://scenes/entities/player.tscn" id="2_0ahq2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://5ndf1hk58gps" path="res://graphics/level/tilesets/decoration_tilemap.png" id="7_dx145"]
 [ext_resource type="PackedScene" uid="uid://bm5nb2a6vxhpe" path="res://scenes/entities/potion_machine.tscn" id="7_i7cbh"]
 [ext_resource type="PackedScene" uid="uid://83ie1giq43x3" path="res://scenes/entities/rat.tscn" id="8_121db"]
+[ext_resource type="PackedScene" uid="uid://ge2uyc2b15sk" path="res://scenes/entities/ant.tscn" id="9_e38xj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fu6d"]
 texture = ExtResource("3_4q3k8")
@@ -450,6 +451,13 @@ position = Vector2(1888, 1016)
 position = Vector2(1942, 2000)
 speed = 350
 
+[node name="Ant" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("9_e38xj")]
+position = Vector2(3104, 1349)
+speed = 75.0
+player_detect_distance = 256.0
+marker1 = NodePath("../../AntPathPoints/Marker2D")
+marker2 = NodePath("../../AntPathPoints/Marker2D2")
+
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Items" type="Node2D" parent="."]
@@ -468,6 +476,14 @@ position = Vector2(2903, 883)
 
 [node name="Decoration" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_jine5")
+
+[node name="AntPathPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="AntPathPoints"]
+position = Vector2(3018, 1414)
+
+[node name="Marker2D2" type="Marker2D" parent="AntPathPoints"]
+position = Vector2(3208, 1354)
 
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
 [connection signal="shrink_me" from="Player" to="." method="_on_player_shrink_me"]
