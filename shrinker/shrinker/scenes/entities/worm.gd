@@ -5,6 +5,7 @@ extends Area2D
 var direction:Vector2 = Vector2.RIGHT
 @export var speed:int = 50
 @export var damage:int = 10
+@export var player_size_damage_threshold:int = 3
 
 func _process(delta: float) -> void:
 	if visible:
@@ -45,7 +46,8 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	if body is Player:
-		body.damage(damage)
+		if body.current_size <= player_size_damage_threshold:
+			body.damage(damage)
 
 func move(delta:float):
 	

@@ -6,6 +6,8 @@ extends Area2D
 @export var player_detect_distance : float = 64
 @export var marker1: Marker2D
 @export var marker2: Marker2D
+@export var damage:int = 20
+@export var player_size_damage_threshold:int = 3
 
 @export var max_health := 3
 var health := 3
@@ -52,7 +54,8 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	if body is Player:
-		body.damage(20)
+		if body.current_size <= player_size_damage_threshold:
+			body.damage(damage)
 
 func move(delta: float):
 	
