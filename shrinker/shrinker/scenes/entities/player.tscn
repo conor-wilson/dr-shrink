@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -89,7 +89,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump_gun",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,7 +147,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_gun",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qok2"]
@@ -162,9 +162,8 @@ script = ExtResource("1_p3vp5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_4p1pi")
 sprite_frames = SubResource("SpriteFrames_rolv3")
-animation = &"walk_gun"
+animation = &"idle_gun"
 autoplay = "walk"
-speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0qok2")
