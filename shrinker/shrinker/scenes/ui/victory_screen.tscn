@@ -1,20 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo3bv3v7gi5j4"]
+[gd_scene load_steps=4 format=3 uid="uid://bo3bv3v7gi5j4"]
+
+[ext_resource type="Script" path="res://scenes/ui/victory_screen.gd" id="1_y02ob"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dfb8j"]
 font_size = 64
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_8eblx"]
+font_size = 32
+
 [node name="VictoryScreen" type="CanvasLayer"]
+script = ExtResource("1_y02ob")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.6975, 1, 0.67, 1)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 405.0
-offset_top = 270.0
-offset_right = 722.0
-offset_bottom = 358.0
+[node name="Victory" type="Label" parent="."]
+offset_left = 410.0
+offset_top = 229.0
+offset_right = 727.0
+offset_bottom = 317.0
 text = " YOU WIN!"
 label_settings = SubResource("LabelSettings_dfb8j")
+
+[node name="PressAnyKey" type="Label" parent="."]
+offset_left = 379.0
+offset_top = 344.0
+offset_right = 771.0
+offset_bottom = 389.0
+text = "PRESS SPACE TO RESTART"
+label_settings = SubResource("LabelSettings_8eblx")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
