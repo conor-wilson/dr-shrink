@@ -2,6 +2,10 @@ extends Node2D
 
 signal victory
 signal game_over
+signal potion_picked_up
+signal first_shrink
+signal second_shrink
+signal third_shrink
 
 const bullet_scene : PackedScene = preload("res://scenes/levels/bullet.tscn")
 
@@ -28,6 +32,12 @@ func _on_water_zone_body_exited(body: Node2D) -> void:
 
 func _on_player_shrank() -> void:
 	reset_level()
+	if $Player.current_size == 3:
+		first_shrink.emit()
+	elif $Player.current_size == 2:
+		second_shrink.emit()
+	elif $Player.current_size == 1: 
+		third_shrink.emit()
 
 func reset_level():
 	$PotionMachine.has_red = false
@@ -50,3 +60,7 @@ func _on_visibility_changed() -> void:
 	if visible:
 		$Player.show()
 		reset_level()
+
+
+func _on_gun_potion_picked_up() -> void:
+	potion_picked_up.emit()

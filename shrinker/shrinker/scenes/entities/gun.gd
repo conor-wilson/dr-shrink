@@ -1,5 +1,7 @@
 extends Area2D
 
+signal potion_picked_up
+
 @export var float_amplitude := 10.0
 @export var float_rate      := 0.005
 
@@ -11,3 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 		body.has_gun = true
 		hide()
 		$CollectSound.play()
+		potion_picked_up.emit()

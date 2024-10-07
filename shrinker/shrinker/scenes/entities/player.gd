@@ -173,6 +173,8 @@ func damage(amount:int):
 
 func shrink():
 	
+	can_shrink = false
+	
 	if current_size == 1:
 		victory.emit()
 	
@@ -216,7 +218,8 @@ func _on_visibility_changed() -> void:
 		current_size = 4
 		has_gun = false
 		is_swimming = false
-		position = Vector2(864, 678)
+		can_shrink = false
+		position = Vector2(1020, 1188)
 		velocity = Vector2.ZERO
 		set_sprite_size()
 		set_variable_params()

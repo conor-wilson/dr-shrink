@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3jm7al5nk63m"]
+[gd_scene load_steps=8 format=3 uid="uid://c3jm7al5nk63m"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_eydjb"]
+[ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_3avod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yutag"]
 bg_color = Color(0.233925, 0.233925, 0.233925, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkoue"]
 bg_color = Color(0.862745, 0.203922, 0.223529, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqta5"]
+font = ExtResource("2_3avod")
+shadow_color = Color(0, 0, 0, 0.643137)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x0kvc"]
+font = ExtResource("2_3avod")
+font_size = 32
+shadow_color = Color(0, 0, 0, 0.498039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrt1h"]
+font = ExtResource("2_3avod")
+font_color = Color(0.69, 0.69, 0.69, 1)
+shadow_color = Color(0, 0, 0, 0.682353)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_eydjb")
@@ -31,3 +46,143 @@ theme_override_styles/background = SubResource("StyleBoxFlat_yutag")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hkoue")
 value = 30.0
 show_percentage = false
+
+[node name="DialogueRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.0
+offset_top = -280.0
+offset_right = 305.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.53, 0.53, 0.53, 1)
+
+[node name="PressSpace" type="Label" parent="DialogueRect"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 178.0
+offset_right = 596.0
+offset_bottom = 201.0
+text = "[SPACE]..."
+label_settings = SubResource("LabelSettings_xqta5")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Dialogue1" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -234.0
+offset_right = 258.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EUREKA!!
+I, DR. SHRINK, have finally perfected my SHRINKING POTION and have shrunk myself down to half my original height!"
+label_settings = SubResource("LabelSettings_x0kvc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Dialogue2" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -245.0
+offset_right = 258.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Now to return to my original size!
+
+All I need is to bring that SHRINK CATYLIST on the shelf above the fish tank to my POTION MACHINE..."
+label_settings = SubResource("LabelSettings_x0kvc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="FirstShrinkDialogue" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -254.0
+offset_right = 259.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Huh... that wasn't supposed to happen...
+
+Not to worry, I'll just get some more SHRINK CATYLIST for the machine and I'm sure it will get me back to normal!"
+label_settings = SubResource("LabelSettings_x0kvc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SecondShrinkDialogue" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -260.0
+offset_right = 281.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WHAT?? No no... the machine is supposed to bring me back to my normal size... did I make a miscalculation???
+
+Maybe some more SHRINK CATYLIST will help?!"
+label_settings = SubResource("LabelSettings_x0kvc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ThirdShrinkDialogue" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -244.0
+offset_right = 259.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO! NO NO NO NO NO this HAS to work!
+
+SHRINK CATYLIST! More SHRINK CATYLIST is what I need! WHY DO YOU DEFY ME GOD?"
+label_settings = SubResource("LabelSettings_x0kvc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PotionInstructions" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -71.0
+offset_right = 107.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[SPACE TO THROW SHRINK CATYLIST]"
+label_settings = SubResource("LabelSettings_qrt1h")

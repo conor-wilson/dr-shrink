@@ -13,12 +13,16 @@ func _ready() -> void:
 
 func set_sprite():
 	if has_blue && has_red: 
+		$ShrinkInstructions.show()
 		$Sprite2D.texture = purple_sprite
 	elif has_blue && !has_red:
+		$ShrinkInstructions.hide()
 		$Sprite2D.texture = blue_sprite
 	elif !has_blue && has_red:
+		$ShrinkInstructions.hide()
 		$Sprite2D.texture = red_sprite
 	else:
+		$ShrinkInstructions.hide()
 		$Sprite2D.texture = empty_sprite
 
 func _on_area_entered(area: Area2D) -> void:

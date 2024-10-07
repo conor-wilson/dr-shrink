@@ -444,7 +444,7 @@ tile_set = SubResource("TileSet_3foop")
 position = Vector2(512, 1408)
 
 [node name="Player" parent="." instance=ExtResource("2_0ahq2")]
-position = Vector2(864, 678)
+position = Vector2(1020, 1188)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -686,5 +686,6 @@ position = Vector2(4424, 1399)
 [connection signal="fire_bullet" from="Player" to="." method="_on_player_fire_bullet"]
 [connection signal="shrank" from="Player" to="." method="_on_player_shrank"]
 [connection signal="victory" from="Player" to="." method="_on_player_victory"]
+[connection signal="potion_picked_up" from="Items/Gun" to="." method="_on_gun_potion_picked_up"]
 [connection signal="body_entered" from="WaterZone" to="." method="_on_water_zone_body_entered"]
 [connection signal="body_exited" from="WaterZone" to="." method="_on_water_zone_body_exited"]
