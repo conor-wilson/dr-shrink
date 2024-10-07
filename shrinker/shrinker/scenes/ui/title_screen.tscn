@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://big2mxh67jsel"]
+
+[ext_resource type="Texture2D" uid="uid://dvo5rvwk8idhx" path="res://graphics/critters/gameover/ScientistClipboard-Sheet.png" id="1_gci3c"]
+[ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_mbgp1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pp70a"]
+font = ExtResource("2_mbgp1")
+font_size = 64
+font_color = Color(0.631373, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ix2ay"]
+font = ExtResource("2_mbgp1")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_l35hs"]
+font = ExtResource("2_mbgp1")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_bnhmq"]
+resource_name = "dr_shrink_clipboard"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DrShrink:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_hlbqu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DrShrink:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqa5h"]
+_data = {
+"RESET": SubResource("Animation_hlbqu"),
+"dr_shrink_clipboard": SubResource("Animation_bnhmq")
+}
+
+[node name="TitleScreen" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="DrShrink" type="Sprite2D" parent="."]
+position = Vector2(587, 281)
+scale = Vector2(4, 4)
+texture = ExtResource("1_gci3c")
+hframes = 16
+
+[node name="GameOver" type="Label" parent="."]
+offset_top = 77.0
+offset_right = 1151.0
+offset_bottom = 165.0
+text = "Dr. Shrink"
+label_settings = SubResource("LabelSettings_pp70a")
+horizontal_alignment = 1
+
+[node name="PressAnyKey" type="Label" parent="."]
+offset_top = 494.0
+offset_right = 1152.0
+offset_bottom = 539.0
+text = "PRESS SPACE TO RESTART"
+label_settings = SubResource("LabelSettings_ix2ay")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_top = 147.0
+offset_right = 1152.0
+offset_bottom = 175.0
+text = "AND THE HORRORS OF THE INFINITE"
+label_settings = SubResource("LabelSettings_l35hs")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xqa5h")
+}
+autoplay = "dr_shrink_clipboard"
