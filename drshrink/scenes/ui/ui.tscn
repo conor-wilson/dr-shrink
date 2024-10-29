@@ -96,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Now to return to my original size!
 
-All I need is to bring that SHRINK CATYLIST on the shelf above the fish tank to my POTION MACHINE..."
+All I need is to bring that SHRINK CATALYST on the shelf above the fish tank to my POTION MACHINE..."
 label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -116,7 +116,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Huh... that wasn't supposed to happen...
 
-Not to worry, I'll just get some more SHRINK CATYLIST for the machine and I'm sure it will get me back to normal!"
+Not to worry, I'll just get some more SHRINK CATALYST for the machine and I'm sure it will get me back to normal!"
 label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -136,7 +136,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "WHAT?? No no... the machine is supposed to bring me back to my normal size... did I make a miscalculation???
 
-Maybe some more SHRINK CATYLIST will help?!"
+Maybe some more SHRINK CATALYST will help?!"
 label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -156,7 +156,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "NO! NO NO NO NO NO this HAS to work!
 
-SHRINK CATYLIST! More SHRINK CATYLIST is what I need! WHY DO YOU DEFY ME GOD?"
+SHRINK CATALYST! More SHRINK CATALYST is what I need! WHY DO YOU DEFY ME GOD?"
 label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -174,5 +174,5 @@ offset_right = 107.0
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "[SPACE TO THROW SHRINK CATYLIST]"
+text = "[SPACE TO THROW SHRINK CATALYST]"
 label_settings = SubResource("LabelSettings_qrt1h")

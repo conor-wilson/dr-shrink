@@ -18,23 +18,6 @@ font_size = 32
 font = ExtResource("2_emw2h")
 font_size = 32
 
-[sub_resource type="Animation" id="Animation_35oig"]
-resource_name = "rat_eating"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rat:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
 [sub_resource type="Animation" id="Animation_etghp"]
 length = 0.001
 tracks/0/type = "value"
@@ -77,6 +60,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_35oig"]
+resource_name = "rat_eating"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rat:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pq8qs"]
@@ -126,7 +126,7 @@ horizontal_alignment = 1
 offset_top = 123.0
 offset_right = 1152.0
 offset_bottom = 151.0
-text = "DR. Shrink was devoured by the TINY CREATURES in his lab..."
+text = "DR. SHRINK was devoured by the TINY CREATURES in his lab..."
 label_settings = SubResource("LabelSettings_rt546")
 horizontal_alignment = 1
 

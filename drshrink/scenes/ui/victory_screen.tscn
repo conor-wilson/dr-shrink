@@ -17,23 +17,6 @@ font_size = 32
 font = ExtResource("2_20r6w")
 font_size = 32
 
-[sub_resource type="Animation" id="Animation_35oig"]
-resource_name = "rat_eating"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rat:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
 [sub_resource type="Animation" id="Animation_etghp"]
 length = 0.001
 tracks/0/type = "value"
@@ -76,6 +59,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_35oig"]
+resource_name = "rat_eating"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rat:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pq8qs"]
@@ -121,7 +121,7 @@ offset_right = 412.5
 offset_bottom = -157.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "DR. Shrink shrank to a singularity, doomed to drift alone in the vast emptiness of the infinite."
+text = "DR. SHRINK shrank to a singularity, doomed to drift alone in the vast emptiness of the infinite."
 label_settings = SubResource("LabelSettings_ih0l8")
 horizontal_alignment = 1
 autowrap_mode = 2
