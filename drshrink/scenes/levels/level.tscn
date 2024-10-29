@@ -600,8 +600,8 @@ marker2 = NodePath("../../JellyFishPathPoints/Marker2D8")
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Gun" parent="Items" instance=ExtResource("5_oude2")]
-position = Vector2(4993, 656)
-float_amplitude = 60.0
+position = Vector2(4992, 672)
+float_amplitude = 100.0
 
 [node name="WaterZone" type="Area2D" parent="."]
 collision_mask = 2
