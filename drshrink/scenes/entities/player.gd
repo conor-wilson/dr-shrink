@@ -108,7 +108,7 @@ func shoot():
 		bullet_dir += Vector2.RIGHT
 	
 	# Derrive the position that the bullet should spawn at
-	var bullet_pos := global_position
+	var bullet_pos := position
 	
 	# Fire the bullet and start the cooldown
 	fire_bullet.emit(bullet_pos, bullet_dir.normalized())
