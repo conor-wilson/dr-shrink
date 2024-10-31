@@ -8,6 +8,8 @@ var purple_sprite = preload("res://graphics/custom/PotionMachinePurple-Sheet.png
 @export var has_blue : bool = true
 @export var has_red  : bool = false
 
+@onready var player:Player = get_tree().get_first_node_in_group('Player') # <-- COOL!
+
 func _ready() -> void:
 	set_sprite()
 
@@ -30,9 +32,13 @@ func _on_area_entered(area: Area2D) -> void:
 		has_red = true
 		set_sprite()
 		area.queue_free()
+	
+	# Check if the player should be allowed to shrink
+	if has_red && has_blue && overlaps_body(player):
+		player.can_shrink = true
 
 # TODO: Review how this is handled (probably after the game jam)
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:	
 	if body is Player && has_blue && has_red:
 		body.can_shrink = true
 
