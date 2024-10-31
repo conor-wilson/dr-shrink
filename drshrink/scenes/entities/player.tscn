@@ -149,9 +149,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qok2"]
-radius = 5.0
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e4vs"]
+size = Vector2(10, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ydg"]
 size = Vector2(4, 7)
@@ -168,7 +167,7 @@ animation = &"idle_gun"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_0qok2")
+shape = SubResource("RectangleShape2D_7e4vs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
