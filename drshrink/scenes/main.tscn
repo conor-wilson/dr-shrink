@@ -20,7 +20,6 @@ offset_bottom = 648.0
 color = Color(0.988235, 0.87451, 0.803922, 1)
 
 [node name="Level" parent="." instance=ExtResource("2_aqpo2")]
-position = Vector2(-57, 15)
 
 [node name="UI" parent="." instance=ExtResource("2_03qlr")]
 
