@@ -60,13 +60,13 @@ func _ready():
 func _process(delta: float) -> void:
 	if visible:
 		apply_gravity(delta)
+		handle_jumpability()
 		handle_input()
 		set_animation()
 		move_and_slide()
 
 func apply_gravity(delta: float):
 	if not is_on_floor():
-		can_jump = false
 		var vel_due_to_gravity:Vector2 = get_gravity() * gravity_multiplier * delta
 		if velocity.y > 0:
 			if Input.is_action_pressed("Jump"):
@@ -75,8 +75,12 @@ func apply_gravity(delta: float):
 				vel_due_to_gravity *= 0.1
 		
 		velocity += vel_due_to_gravity
-	else:
+
+func handle_jumpability(): 
+	if is_on_floor():
 		can_jump = true
+	else:
+		can_jump = false
 
 func handle_input():
 	
