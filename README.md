@@ -2,6 +2,8 @@
 
 [Click here to play the game!](https://quietlantern.itch.io/dr-shrink-and-the-horrors-of-the-infinite)
 
+**DISCLAIMER:** This was a 72-hour game jam. This code was written on the fly while I was learning how to make a platformer, and much of it was written in the wee hours of the morning. The code is completely horrible, not commented, copy/pasted, duplicated, etc... DO NOT LOOK AT THIS CODE! You have been warned.
+
 ## Game Description: 
 
 EUREKA! Dr. Shrink has finally perfected the formula for his shrinking potion! He just forgot one little thing: how is he going to grow back??
@@ -48,3 +50,18 @@ This was made in 72 hours as my submission for Ludum Dare 56! [[Link to Submissi
 - https://www.twitch.tv/videos/2273720699?t=04h31m28s
 - https://www.twitch.tv/videos/2278759261
 - https://www.youtube.com/watch?v=xwhWqbt5qxA
+
+## Options for the Future:
+If I ever return to this (which I very well may not), here's some desirable changes that would be nice to add: 
+- Fix the hideous code.
+- Create original sprite art for Dr. Shrink and enemies.
+- Fix up background art to be less plain.
+- Add lesser combat ability before you acquire Shrink Catalyst.
+- Add pause/options menu.
+- Add more levels?
+- Improve sound to be more responseive to what's happening.
+- Prevent enemies from escaping their area.
+- Improve background (it's very plain).
+- Add respawn instead of completely restarting the game
+
+Again, if none of the above gets added ever, I'm still happy and still think it's a finished product. 
