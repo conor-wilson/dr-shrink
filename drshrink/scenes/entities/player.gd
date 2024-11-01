@@ -51,6 +51,7 @@ var health           : int  = 100
 
 # TODO: Review how this is handled (probably after the game jam) (this goes for basically eveything lmao)
 var can_shrink:bool = false
+var can_jump  :bool = false
 
 func _ready():
 	set_sprite_size()
@@ -65,6 +66,7 @@ func _process(delta: float) -> void:
 
 func apply_gravity(delta: float):
 	if not is_on_floor():
+		can_jump = false
 		var vel_due_to_gravity:Vector2 = get_gravity() * gravity_multiplier * delta
 		if velocity.y > 0:
 			if Input.is_action_pressed("Jump"):
@@ -73,6 +75,8 @@ func apply_gravity(delta: float):
 				vel_due_to_gravity *= 0.1
 		
 		velocity += vel_due_to_gravity
+	else:
+		can_jump = true
 
 func handle_input():
 	
@@ -80,7 +84,7 @@ func handle_input():
 		shrink()
 	
 	# Handle jump input
-	if Input.is_action_just_pressed("Jump") && (is_on_floor() or is_swimming):
+	if Input.is_action_just_pressed("Jump") && (can_jump or is_swimming):
 		jump()
 	
 	# Handle shoot input
