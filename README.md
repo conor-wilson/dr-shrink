@@ -2,7 +2,7 @@
 
 [Click here to play the game!](https://quietlantern.itch.io/dr-shrink-and-the-horrors-of-the-infinite)
 
-**DISCLAIMER:** THIS CODE IS HIDEOUS! This was a 72-hour game jam. This code was written on the fly while I was learning how to make a platformer, and much of it was written in the wee hours of the morning. The code is completely horrible, not commented, copy/pasted, duplicated, etc... DO NOT LOOK AT THIS CODE! You have been warned.
+**DISCLAIMER: THIS CODE IS HIDEOUS!** This was a 72-hour game jam. This code was written on the fly while I was learning how to make a platformer, and much of it was written in the wee hours of the morning. The code is completely horrible, not commented, copy/pasted, duplicated, etc... DO NOT LOOK AT THIS CODE! You have been warned.
 
 ## Game Description: 
 
