@@ -184,7 +184,11 @@ wait_time = 0.6
 one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="Timers"]
-wait_time = 0.05
+wait_time = 0.06
+
+[node name="JumpBufferTimer" type="Timer" parent="Timers"]
+wait_time = 0.07
+one_shot = true
 
 [node name="Sounds" type="Node" parent="."]
 

@@ -49,9 +49,9 @@ var is_swimming      : bool = false
 var head_above_water : bool = true
 var health           : int  = 100
 
-# TODO: Review how this is handled (probably after the game jam) (this goes for basically eveything lmao)
-var can_shrink:bool = false
-var can_jump  :bool = false
+var can_shrink :bool = false # TODO: Review how this is handled (probably after the game jam) (this goes for basically eveything lmao)
+var can_jump   :bool = false
+#var jump_buffer:bool = false
 
 func _ready():
 	set_sprite_size()
@@ -61,6 +61,7 @@ func _process(delta: float) -> void:
 	if visible:
 		apply_gravity(delta)
 		handle_jumpability()
+		handle_jump_buffer()
 		handle_input()
 		set_animation()
 		move_and_slide()
@@ -88,14 +89,24 @@ func handle_jumpability():
 func _on_coyote_timer_timeout() -> void:
 	can_jump = false
 
+# handle_jump_buffer causes the player to jump if they have just landed on the floor
+# during the jump buffer timeout period.
+func handle_jump_buffer():
+	if not $Timers/JumpBufferTimer.is_stopped() && can_jump:
+		jump()
+
 func handle_input():
 	
 	if Input.is_action_just_pressed("Shrink") && can_shrink:
 		shrink()
 	
 	# Handle jump input
-	if Input.is_action_just_pressed("Jump") && (can_jump or is_swimming):
-		jump()
+	if Input.is_action_just_pressed("Jump"):
+		if can_jump or is_swimming:
+			jump()
+		else:
+			#jump_buffer = true
+			$Timers/JumpBufferTimer.start()
 	
 	# Handle shoot input
 	if Input.is_action_just_pressed("Shoot") && $Timers/ShootCooldown.is_stopped() && has_gun :
@@ -107,6 +118,9 @@ func handle_input():
 	set_direction(direction)
 
 func jump():
+	can_jump = false
+	$Timers/CoyoteTimer.stop()
+	$Timers/JumpBufferTimer.stop()
 	velocity.y = -jump_speed
 	if is_swimming && !head_above_water: 
 		velocity.y *= 0.6
