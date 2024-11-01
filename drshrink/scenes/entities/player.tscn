@@ -183,6 +183,9 @@ one_shot = true
 wait_time = 0.6
 one_shot = true
 
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
+wait_time = 0.05
+
 [node name="Sounds" type="Node" parent="."]
 
 [node name="FireSound" type="AudioStreamPlayer" parent="Sounds"]
@@ -202,5 +205,6 @@ position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_c4ydg")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="area_entered" from="SurfaceDetector" to="." method="_on_surface_detector_area_entered"]
 [connection signal="area_exited" from="SurfaceDetector" to="." method="_on_surface_detector_area_exited"]

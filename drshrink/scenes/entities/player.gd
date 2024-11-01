@@ -76,11 +76,17 @@ func apply_gravity(delta: float):
 		
 		velocity += vel_due_to_gravity
 
+# handle_jumpability detects whether the player should be able to jump, and adjusts the
+# can_jump var accordingly.
 func handle_jumpability(): 
 	if is_on_floor():
 		can_jump = true
-	else:
-		can_jump = false
+		$Timers/CoyoteTimer.stop()
+	elif can_jump && $Timers/CoyoteTimer.is_stopped(): 
+		$Timers/CoyoteTimer.start()
+
+func _on_coyote_timer_timeout() -> void:
+	can_jump = false
 
 func handle_input():
 	
