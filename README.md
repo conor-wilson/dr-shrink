@@ -55,13 +55,12 @@ This was made in 72 hours as my submission for Ludum Dare 56! [[Link to Submissi
 If I ever return to this (which I very well may not), here's some desirable changes that would be nice to add: 
 - Fix the hideous code.
 - Create original sprite art for Dr. Shrink and enemies.
-- Fix up background art to be less plain.
+- Improve background (it's very plain).
 - Add lesser combat ability before you acquire Shrink Catalyst.
 - Add pause/options menu.
 - Add more levels?
 - Improve sound to be more responseive to what's happening.
 - Prevent enemies from escaping their area.
-- Improve background (it's very plain).
 - Add respawn instead of completely restarting the game
 
 Again, if none of the above gets added ever, I'm still happy and still think it's a finished product. 
