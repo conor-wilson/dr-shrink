@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dhlgy38ca8fph"]
 
-[ext_resource type="Script" path="res://scenes/levels/bullet.gd" id="1_td3nc"]
+[ext_resource type="Script" uid="uid://brpn2krf7wd7c" path="res://scenes/levels/bullet.gd" id="1_td3nc"]
 [ext_resource type="Texture2D" uid="uid://cqop0e77mjs3x" path="res://graphics/custom/PotionProjectileRed-Sheet.png" id="2_dl3um"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5ehk"]
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_clsw6"]
 _data = {
-"RESET": SubResource("Animation_cmcgi"),
-"potion_projectile": SubResource("Animation_qpcna")
+&"RESET": SubResource("Animation_cmcgi"),
+&"potion_projectile": SubResource("Animation_qpcna")
 }
 
 [node name="Bullet" type="Area2D"]
@@ -59,7 +59,7 @@ shape = SubResource("RectangleShape2D_g5ehk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_clsw6")
+&"": SubResource("AnimationLibrary_clsw6")
 }
 autoplay = "potion_projectile"
 

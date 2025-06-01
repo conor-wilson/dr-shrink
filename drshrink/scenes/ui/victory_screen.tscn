@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bo3bv3v7gi5j4"]
 
-[ext_resource type="Script" path="res://scenes/ui/victory_screen.gd" id="1_y02ob"]
+[ext_resource type="Script" uid="uid://cn5euyo8keiyq" path="res://scenes/ui/victory_screen.gd" id="1_y02ob"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_20r6w"]
 [ext_resource type="Texture2D" uid="uid://bnktylqk0yklb" path="res://graphics/critters/gameover/ScientistPanicking-Sheet.png" id="3_l3f1h"]
 
@@ -80,9 +80,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pq8qs"]
 _data = {
-"RESET": SubResource("Animation_etghp"),
-"dr_shrink_panicking": SubResource("Animation_ta5ug"),
-"rat_eating": SubResource("Animation_35oig")
+&"RESET": SubResource("Animation_etghp"),
+&"dr_shrink_panicking": SubResource("Animation_ta5ug"),
+&"rat_eating": SubResource("Animation_35oig")
 }
 
 [node name="VictoryScreen" type="CanvasLayer"]
@@ -134,7 +134,7 @@ hframes = 8
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pq8qs")
+&"": SubResource("AnimationLibrary_pq8qs")
 }
 autoplay = "dr_shrink_panicking"
 

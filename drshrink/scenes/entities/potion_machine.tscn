@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm5nb2a6vxhpe"]
 
-[ext_resource type="Script" path="res://scenes/entities/potion_machine.gd" id="1_524jn"]
+[ext_resource type="Script" uid="uid://dobnd3twv2rij" path="res://scenes/entities/potion_machine.gd" id="1_524jn"]
 [ext_resource type="Texture2D" uid="uid://bnxs6v3lltari" path="res://graphics/custom/PotionMachinePurple-Sheet.png" id="1_fesuh"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="3_7ahg3"]
 
@@ -42,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_41ypu"]
 _data = {
-"RESET": SubResource("Animation_uun5d"),
-"purple_bubbles": SubResource("Animation_yu5xh")
+&"RESET": SubResource("Animation_uun5d"),
+&"purple_bubbles": SubResource("Animation_yu5xh")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjbb5"]
@@ -71,7 +71,7 @@ shape = SubResource("CapsuleShape2D_5aj7t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_41ypu")
+&"": SubResource("AnimationLibrary_41ypu")
 }
 autoplay = "purple_bubbles"
 

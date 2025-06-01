@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcl1vx7un8iwa"]
 
-[ext_resource type="Script" path="res://scenes/entities/gun.gd" id="1_3sqi5"]
+[ext_resource type="Script" uid="uid://bctryacmha4ve" path="res://scenes/entities/gun.gd" id="1_3sqi5"]
 [ext_resource type="Texture2D" uid="uid://cqop0e77mjs3x" path="res://graphics/custom/PotionProjectileRed-Sheet.png" id="2_du7x5"]
 [ext_resource type="AudioStream" uid="uid://c1p4badr56mpo" path="res://audio/power_up_01.ogg" id="3_exp5w"]
 

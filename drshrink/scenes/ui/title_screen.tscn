@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://big2mxh67jsel"]
 
-[ext_resource type="Script" path="res://scenes/ui/game_over_screen.gd" id="1_fvoax"]
+[ext_resource type="Script" uid="uid://eqxg3u8r7dou" path="res://scenes/ui/game_over_screen.gd" id="1_fvoax"]
 [ext_resource type="Texture2D" uid="uid://dvo5rvwk8idhx" path="res://graphics/critters/gameover/ScientistClipboard-Sheet.png" id="1_gci3c"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_mbgp1"]
 
@@ -51,8 +51,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqa5h"]
 _data = {
-"RESET": SubResource("Animation_hlbqu"),
-"dr_shrink_clipboard": SubResource("Animation_bnhmq")
+&"RESET": SubResource("Animation_hlbqu"),
+&"dr_shrink_clipboard": SubResource("Animation_bnhmq")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_x0k7n"]

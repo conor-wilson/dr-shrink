@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://qqpy727wo2k3"]
 
-[ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_p3vp5"]
-[ext_resource type="Shader" path="res://scenes/entities/flicker.gdshader" id="2_fk600"]
+[ext_resource type="Script" uid="uid://bypmdxucmjhet" path="res://scenes/entities/player.gd" id="1_p3vp5"]
+[ext_resource type="Shader" uid="uid://c4c2aunq08rsj" path="res://scenes/entities/flicker.gdshader" id="2_fk600"]
 [ext_resource type="Texture2D" uid="uid://bt00hs3w1tlky" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle1.png" id="3_5ds5o"]
 [ext_resource type="Texture2D" uid="uid://4c4r0passx3b" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle2.png" id="4_3rtbb"]
 [ext_resource type="Texture2D" uid="uid://b1w64alqlndyx" path="res://graphics/elthens_pixel_art_scientists/Idle/ScientistIdle3.png" id="5_brkvq"]
