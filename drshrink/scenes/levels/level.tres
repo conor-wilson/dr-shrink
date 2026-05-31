@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://yxnv4r0nu36c"]
+[gd_resource type="TileSet" format=3 uid="uid://yxnv4r0nu36c"]
 
 [ext_resource type="Texture2D" uid="uid://d3paxan5m0qqh" path="res://graphics/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="1_sbr0w"]
 

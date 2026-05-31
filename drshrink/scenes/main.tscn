@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvedm0us3v54"]
+[gd_scene format=3 uid="uid://dvedm0us3v54"]
 
 [ext_resource type="Script" uid="uid://bigcdj35mujhc" path="res://scenes/main.gd" id="1_dfkcu"]
 [ext_resource type="PackedScene" uid="uid://c3jm7al5nk63m" path="res://scenes/ui/ui.tscn" id="2_03qlr"]
@@ -8,33 +8,33 @@
 [ext_resource type="PackedScene" uid="uid://dvmwmp2gigub3" path="res://scenes/ui/game_over_screen.tscn" id="6_6u0ch"]
 [ext_resource type="PackedScene" uid="uid://big2mxh67jsel" path="res://scenes/ui/title_screen.tscn" id="7_ov50r"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=122625691]
 script = ExtResource("1_dfkcu")
 
-[node name="BG" type="CanvasLayer" parent="."]
+[node name="BG" type="CanvasLayer" parent="." unique_id=157197575]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="BG"]
+[node name="ColorRect" type="ColorRect" parent="BG" unique_id=582143372]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.988235, 0.87451, 0.803922, 1)
 
-[node name="Level" parent="." instance=ExtResource("2_aqpo2")]
+[node name="Level" parent="." unique_id=869699833 instance=ExtResource("2_aqpo2")]
 
-[node name="UI" parent="." instance=ExtResource("2_03qlr")]
+[node name="UI" parent="." unique_id=86134949 instance=ExtResource("2_03qlr")]
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=155433266]
 stream = ExtResource("3_pdgux")
 volume_db = -10.0
 parameters/looping = true
 
-[node name="VictoryScreen" parent="." instance=ExtResource("5_r7y8h")]
+[node name="VictoryScreen" parent="." unique_id=404114960 instance=ExtResource("5_r7y8h")]
 visible = false
 
-[node name="GameOverScreen" parent="." instance=ExtResource("6_6u0ch")]
+[node name="GameOverScreen" parent="." unique_id=248503939 instance=ExtResource("6_6u0ch")]
 visible = false
 
-[node name="TitleScreen" parent="." instance=ExtResource("7_ov50r")]
+[node name="TitleScreen" parent="." unique_id=1644137608 instance=ExtResource("7_ov50r")]
 visible = false
 
 [connection signal="first_shrink" from="Level" to="." method="_on_level_first_shrink"]

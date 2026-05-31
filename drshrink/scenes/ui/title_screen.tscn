@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://big2mxh67jsel"]
+[gd_scene format=3 uid="uid://big2mxh67jsel"]
 
 [ext_resource type="Script" uid="uid://eqxg3u8r7dou" path="res://scenes/ui/game_over_screen.gd" id="1_fvoax"]
 [ext_resource type="Texture2D" uid="uid://dvo5rvwk8idhx" path="res://graphics/critters/gameover/ScientistClipboard-Sheet.png" id="1_gci3c"]
@@ -59,21 +59,21 @@ _data = {
 font = ExtResource("2_mbgp1")
 font_size = 32
 
-[node name="TitleScreen" type="CanvasLayer"]
+[node name="TitleScreen" type="CanvasLayer" unique_id=1709437118]
 script = ExtResource("1_fvoax")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1600080752]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
-[node name="DrShrink" type="Sprite2D" parent="."]
+[node name="DrShrink" type="Sprite2D" parent="." unique_id=1151432899]
 position = Vector2(589, 332)
 scale = Vector2(4, 4)
 texture = ExtResource("1_gci3c")
 hframes = 20
 
-[node name="GameOver" type="Label" parent="."]
+[node name="GameOver" type="Label" parent="." unique_id=1880028281]
 offset_top = 107.0
 offset_right = 1151.0
 offset_bottom = 195.0
@@ -81,7 +81,7 @@ text = "Dr. Shrink"
 label_settings = SubResource("LabelSettings_pp70a")
 horizontal_alignment = 1
 
-[node name="PressAnyKey" type="Label" parent="."]
+[node name="PressAnyKey" type="Label" parent="." unique_id=321021308]
 offset_left = 5.0
 offset_top = 444.0
 offset_right = 1157.0
@@ -90,7 +90,7 @@ text = "PRESS SPACE TO START"
 label_settings = SubResource("LabelSettings_ix2ay")
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2088478160]
 offset_top = 183.0
 offset_right = 1152.0
 offset_bottom = 211.0
@@ -98,13 +98,11 @@ text = "AND THE HORRORS OF THE INFINITE"
 label_settings = SubResource("LabelSettings_l35hs")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_xqa5h")
-}
-autoplay = "dr_shrink_clipboard"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=819484797]
+libraries/ = SubResource("AnimationLibrary_xqa5h")
+autoplay = &"dr_shrink_clipboard"
 
-[node name="Author" type="Label" parent="."]
+[node name="Author" type="Label" parent="." unique_id=1005465571]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -116,7 +114,7 @@ offset_right = 250.0
 offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Made for Ludum Dare 56 by Conor Wilson (QuietLantern)"
+text = "Made for Ludum Dare 56 by Conor Wilson"
 label_settings = SubResource("LabelSettings_x0k7n")
 horizontal_alignment = 1
 
