@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3jm7al5nk63m"]
+[gd_scene format=3 uid="uid://c3jm7al5nk63m"]
 
 [ext_resource type="Script" uid="uid://dgqtygao3uyl4" path="res://scenes/ui/ui.gd" id="1_eydjb"]
 [ext_resource type="FontFile" uid="uid://dkojes82n3r43" path="res://fonts/m6x11.ttf" id="2_3avod"]
@@ -12,22 +12,35 @@ bg_color = Color(0.862745, 0.203922, 0.223529, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xqta5"]
 font = ExtResource("2_3avod")
+shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.643137)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x0kvc"]
 font = ExtResource("2_3avod")
 font_size = 32
-shadow_color = Color(0, 0, 0, 0.498039)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qrt1h"]
 font = ExtResource("2_3avod")
-font_color = Color(0.69, 0.69, 0.69, 1)
-shadow_color = Color(0, 0, 0, 0.682353)
+font_size = 24
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(2, 2)
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="LabelSettings" id="LabelSettings_aac20"]
+font = ExtResource("2_3avod")
+font_size = 24
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=666675384]
 script = ExtResource("1_eydjb")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=416744696]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -40,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=258322821]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_yutag")
@@ -48,22 +61,38 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hkoue")
 value = 30.0
 show_percentage = false
 
-[node name="DialogueRect" type="Sprite2D" parent="."]
+[node name="DialogueRect" type="Sprite2D" parent="." unique_id=862685486]
 position = Vector2(576, 148)
 texture = ExtResource("2_ayu0w")
 
-[node name="PressSpace" type="Label" parent="DialogueRect"]
-offset_left = 224.0
+[node name="ColorRect2" type="ColorRect" parent="DialogueRect" unique_id=1770731039]
+offset_left = -305.0
+offset_top = -104.0
+offset_right = 305.0
+offset_bottom = 104.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="DialogueRect" unique_id=314023723]
+offset_left = -301.0
+offset_top = -100.0
+offset_right = 301.0
+offset_bottom = 100.0
+color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+
+[node name="PressSpace" type="Label" parent="DialogueRect" unique_id=320462548]
+offset_left = 234.0
 offset_top = 74.0
-offset_right = 297.0
-offset_bottom = 97.0
-text = "[SPACE]..."
+offset_right = 293.0
+offset_bottom = 92.0
+text = "[SPACE] ..."
 label_settings = SubResource("LabelSettings_xqta5")
-horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Dialogue1" type="Label" parent="."]
-visible = false
+[node name="Timer" type="Timer" parent="DialogueRect" unique_id=1969824897]
+wait_time = 0.75
+autostart = true
+
+[node name="Dialogue1" type="Label" parent="." unique_id=2009269099]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -81,7 +110,7 @@ label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Dialogue2" type="Label" parent="."]
+[node name="Dialogue2" type="Label" parent="." unique_id=1966193324]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,7 +130,7 @@ label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="FirstShrinkDialogue" type="Label" parent="."]
+[node name="FirstShrinkDialogue" type="Label" parent="." unique_id=1557590701]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,7 +150,7 @@ label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="SecondShrinkDialogue" type="Label" parent="."]
+[node name="SecondShrinkDialogue" type="Label" parent="." unique_id=1003434046]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,7 +170,7 @@ label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="ThirdShrinkDialogue" type="Label" parent="."]
+[node name="ThirdShrinkDialogue" type="Label" parent="." unique_id=122228903]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -161,18 +190,69 @@ label_settings = SubResource("LabelSettings_x0kvc")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="PotionInstructions" type="Label" parent="."]
+[node name="PotionInstructions" type="ColorRect" parent="." unique_id=482922108]
 visible = false
+offset_left = 400.0
+offset_top = 226.0
+offset_right = 744.0
+offset_bottom = 269.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="PotionInstructions" unique_id=1045295926]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 340.0
+offset_bottom = 39.0
+color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+
+[node name="Label" type="Label" parent="PotionInstructions" unique_id=72415626]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.0
-offset_top = -71.0
-offset_right = 107.0
-offset_bottom = -48.0
+offset_left = -160.0
+offset_top = -10.5
+offset_right = 162.0
+offset_bottom = 12.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "[SPACE TO THROW SHRINK CATALYST]"
+text = "[SPACE] TO THROW SHRINK CATALYST"
 label_settings = SubResource("LabelSettings_qrt1h")
+
+[node name="ShrinkInstructions" type="ColorRect" parent="." unique_id=1223034009]
+visible = false
+offset_left = 447.0
+offset_top = 226.0
+offset_right = 696.0
+offset_bottom = 269.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ShrinkInstructions" unique_id=1731089965]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 245.0
+offset_bottom = 39.0
+color = Color(0.6666667, 0.37254903, 0.78039217, 1)
+
+[node name="Label" type="Label" parent="ShrinkInstructions" unique_id=1286943861]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -10.5
+offset_right = 162.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "[SPACE] TO DRINK POTION"
+label_settings = SubResource("LabelSettings_aac20")
+horizontal_alignment = 1
+
+[connection signal="timeout" from="DialogueRect/Timer" to="." method="_on_timer_timeout"]

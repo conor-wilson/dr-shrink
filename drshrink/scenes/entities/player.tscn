@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://qqpy727wo2k3"]
+[gd_scene format=3 uid="uid://qqpy727wo2k3"]
 
 [ext_resource type="Script" uid="uid://bypmdxucmjhet" path="res://scenes/entities/player.gd" id="1_p3vp5"]
 [ext_resource type="Shader" uid="uid://c4c2aunq08rsj" path="res://scenes/entities/flicker.gdshader" id="2_fk600"]
@@ -155,56 +155,56 @@ size = Vector2(10, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ydg"]
 size = Vector2(4, 7)
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=924826647 groups=["Player"]]
 collision_layer = 2
 collision_mask = 45
 script = ExtResource("1_p3vp5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1153078121]
 material = SubResource("ShaderMaterial_4p1pi")
 sprite_frames = SubResource("SpriteFrames_rolv3")
 animation = &"idle_gun"
 autoplay = "walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586812175]
 shape = SubResource("RectangleShape2D_7e4vs")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=197486806]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="Timers" type="Node2D" parent="."]
+[node name="Timers" type="Node2D" parent="." unique_id=385511998]
 
-[node name="ShootCooldown" type="Timer" parent="Timers"]
+[node name="ShootCooldown" type="Timer" parent="Timers" unique_id=1136716048]
 wait_time = 0.6
 one_shot = true
 
-[node name="InvincibilityCooldown" type="Timer" parent="Timers"]
+[node name="InvincibilityCooldown" type="Timer" parent="Timers" unique_id=760639981]
 wait_time = 0.6
 one_shot = true
 
-[node name="CoyoteTimer" type="Timer" parent="Timers"]
+[node name="CoyoteTimer" type="Timer" parent="Timers" unique_id=1514555575]
 wait_time = 0.06
 
-[node name="JumpBufferTimer" type="Timer" parent="Timers"]
+[node name="JumpBufferTimer" type="Timer" parent="Timers" unique_id=1952683922]
 wait_time = 0.07
 one_shot = true
 
-[node name="Sounds" type="Node" parent="."]
+[node name="Sounds" type="Node" parent="." unique_id=1730394777]
 
-[node name="FireSound" type="AudioStreamPlayer" parent="Sounds"]
+[node name="FireSound" type="AudioStreamPlayer" parent="Sounds" unique_id=219542975]
 stream = ExtResource("8_w42vw")
 
-[node name="JumpSound" type="AudioStreamPlayer" parent="Sounds"]
+[node name="JumpSound" type="AudioStreamPlayer" parent="Sounds" unique_id=1124803438]
 stream = ExtResource("9_k7h02")
 
-[node name="DamageSound" type="AudioStreamPlayer" parent="Sounds"]
+[node name="DamageSound" type="AudioStreamPlayer" parent="Sounds" unique_id=36782722]
 stream = ExtResource("10_r6pwj")
 
-[node name="SurfaceDetector" type="Area2D" parent="."]
+[node name="SurfaceDetector" type="Area2D" parent="." unique_id=1099462885]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SurfaceDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SurfaceDetector" unique_id=148994610]
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_c4ydg")
 

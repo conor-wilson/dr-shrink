@@ -4,6 +4,7 @@ signal fire_bullet(pos:Vector2, dir:Vector2)
 signal shrank
 signal victory
 signal dead
+signal advance_dialogue
 
 const bullet_dist_from_player := 56
 
@@ -96,16 +97,24 @@ func handle_jump_buffer():
 		jump()
 
 func handle_input():
+	# NOTE: I reworked the controls so that the game only really has one "interact" button (the
+	# "Shoot" button), so as a result this function is a bit repetitive, but I think it's pretty
+	# clear to read so I'm leaving it the way it is :)
 	
-	if Input.is_action_just_pressed("Shrink") && can_shrink:
+	# Handle shrink input
+	if Input.is_action_just_pressed("Shoot") && can_shrink:
 		shrink()
+		return
+	
+	# Handle advance dialogue input
+	if Input.is_action_just_pressed("Shoot"):
+		advance_dialogue.emit()
 	
 	# Handle jump input
 	if Input.is_action_just_pressed("Jump"):
 		if can_jump or is_swimming:
 			jump()
 		else:
-			#jump_buffer = true
 			$Timers/JumpBufferTimer.start()
 	
 	# Handle shoot input
