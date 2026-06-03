@@ -11,6 +11,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
+	$PotionInstructions/Label.text = "["+Global.interact_button_text+"] TO THROW SHRINK CATALYST"
+	$ShrinkInstructions/Label.text = "["+Global.interact_button_text+"] TO DRINK POTION"
+	
 	$MarginContainer/ProgressBar.value = player.health
 	
 	if player.visible && player.can_shrink:
@@ -71,11 +74,11 @@ func _on_player_advance_dialogue():
 
 func _on_timer_timeout() -> void:
 	# NOTE: Lmao this is funilly coded but it works so I'm keeping it ¯\_(ツ)_/¯
-	if $DialogueRect/PressSpace.text == "[SPACE]":
-		$DialogueRect/PressSpace.text = "[SPACE] ."
-	elif $DialogueRect/PressSpace.text == "[SPACE] .":
-		$DialogueRect/PressSpace.text = "[SPACE] .."
-	elif $DialogueRect/PressSpace.text == "[SPACE] ..":
-		$DialogueRect/PressSpace.text = "[SPACE] ..."
+	if $DialogueRect/PressSpace.text == Global.prompt_spaces + "[" + Global.interact_button_text + "]":
+		$DialogueRect/PressSpace.text = Global.prompt_spaces + "[" + Global.interact_button_text + "] ."
+	elif $DialogueRect/PressSpace.text == Global.prompt_spaces + "[" + Global.interact_button_text + "] .":
+		$DialogueRect/PressSpace.text = Global.prompt_spaces + "[" + Global.interact_button_text + "] .."
+	elif $DialogueRect/PressSpace.text == Global.prompt_spaces + "[" + Global.interact_button_text + "] ..":
+		$DialogueRect/PressSpace.text = Global.prompt_spaces + "[" + Global.interact_button_text + "] ..."
 	else:
-		$DialogueRect/PressSpace.text = "[SPACE]"
+		$DialogueRect/PressSpace.text = Global.prompt_spaces + "[" + Global.interact_button_text + "]"

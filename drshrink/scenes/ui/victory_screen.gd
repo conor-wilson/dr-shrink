@@ -6,6 +6,8 @@ var waiting_for_space:bool = false
 
 func _process(delta: float) -> void:
 	
+	$PressAnyKey.text = "PRESS " + Global.interact_button_text + " TO RESTART"
+	
 	if visible:
 		$DrShrink.rotate(delta)
 	

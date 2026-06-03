@@ -221,7 +221,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "[SPACE] TO THROW SHRINK CATALYST"
 label_settings = SubResource("LabelSettings_qrt1h")
-horizontal_alignment = 1
 
 [node name="ShrinkInstructions" type="ColorRect" parent="." unique_id=1223034009]
 visible = false

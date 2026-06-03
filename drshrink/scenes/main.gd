@@ -63,3 +63,13 @@ func _on_level_third_shrink() -> void:
 	$UI.show_third_shrink_dialogue()
 	await $UI.done_dialogue
 	$UI.hide_all_dialogue()
+
+
+func _input(event: InputEvent) -> void:
+	# NOTE: lmao, also very dumbly coded but it works so it's staying ¯\_(ツ)_/¯
+	if event.is_action_pressed("Controller"):
+		Global.interact_button_text = "X"
+		Global.prompt_spaces = "     "
+	elif event.is_action_pressed("Keyboad"):
+		Global.interact_button_text = "SPACE"
+		Global.prompt_spaces = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvmwmp2gigub3"]
+[gd_scene format=3 uid="uid://dvmwmp2gigub3"]
 
 [ext_resource type="Script" uid="uid://eqxg3u8r7dou" path="res://scenes/ui/game_over_screen.gd" id="1_pjwek"]
 [ext_resource type="Texture2D" uid="uid://2c32bu0qt7x2" path="res://graphics/critters/gameover/RatEating-Sheet.png" id="2_50aig"]
@@ -86,27 +86,28 @@ _data = {
 &"rat_eating": SubResource("Animation_35oig")
 }
 
-[node name="GameOverScreen" type="CanvasLayer"]
+[node name="GameOverScreen" type="CanvasLayer" unique_id=1354538317]
 script = ExtResource("1_pjwek")
+space_action_text = "RESTART"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1794136477]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
-[node name="DrShrink" type="Sprite2D" parent="."]
+[node name="DrShrink" type="Sprite2D" parent="." unique_id=1482457962]
 position = Vector2(552, 272)
 scale = Vector2(4, 4)
 texture = ExtResource("3_ramvj")
 hframes = 8
 
-[node name="Rat" type="Sprite2D" parent="."]
+[node name="Rat" type="Sprite2D" parent="." unique_id=1774267585]
 position = Vector2(600, 192)
 scale = Vector2(6, 6)
 texture = ExtResource("2_50aig")
 hframes = 5
 
-[node name="GameOver" type="Label" parent="."]
+[node name="GameOver" type="Label" parent="." unique_id=1836040664]
 offset_top = 364.0
 offset_right = 1151.0
 offset_bottom = 452.0
@@ -114,7 +115,7 @@ text = "GAME OVER"
 label_settings = SubResource("LabelSettings_3fk5y")
 horizontal_alignment = 1
 
-[node name="PressAnyKey" type="Label" parent="."]
+[node name="PressAnyKey" type="Label" parent="." unique_id=1997081033]
 offset_top = 467.0
 offset_right = 1152.0
 offset_bottom = 512.0
@@ -122,7 +123,7 @@ text = "PRESS SPACE TO RESTART"
 label_settings = SubResource("LabelSettings_3wpxn")
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=112546957]
 offset_top = 123.0
 offset_right = 1152.0
 offset_bottom = 151.0
@@ -130,16 +131,12 @@ text = "DR. SHRINK was devoured by the TINY CREATURES in his lab..."
 label_settings = SubResource("LabelSettings_rt546")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pq8qs")
-}
-autoplay = "rat_eating"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=560955436]
+libraries/ = SubResource("AnimationLibrary_pq8qs")
+autoplay = &"rat_eating"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pq8qs")
-}
-autoplay = "dr_shrink_panicking"
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1077428235]
+libraries/ = SubResource("AnimationLibrary_pq8qs")
+autoplay = &"dr_shrink_panicking"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
